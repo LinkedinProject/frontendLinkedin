@@ -1,0 +1,198 @@
+<link href="http://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet" />
+
+<body class="flex">
+
+<app-nanav-dashboard-admin></app-nanav-dashboard-admin>
+
+  <section class="section__main">
+<div class="bg-primary flex flex-justify-between flex-align-center banner">
+  <div>
+    <h1 class="text-4xl text-white mb-2">Controler </h1>
+    <h1 class="text-4xl text-white mb-4">Website </h1>
+  
+  </div>
+  <div class="banner__img">
+    <img src="https://i.ibb.co/vBkwrv5/banner.png" alt="banner">
+  </div>
+</div>
+
+
+    <div class="charts my-4">
+      <h4> Mange Website </h4>
+      <div class="flex flex-justify-between flex-align-center my-4">
+
+        <form [formGroup]="updateWeb"  >
+
+          <table   class="w-100">
+            <tr class="w-100">
+              <th style="border-spacing:30px 0px; " class="w-25">
+
+
+                <mat-label *ngIf="toggle2 == 0">
+                  {{h.website.website_Title}}
+                </mat-label>
+
+                <input type="text" placeholder={{h.website.website_Title}} [(ngModel)]="h.website.website_Title"
+                  class="form-control resume" formControlName="website_Title" *ngIf="toggle2 == 1" />
+              </th>
+              <th hidden>
+                <mat-form-field> <img class="img-thumbnail d-flex align-self-center" src="../../../assets/img/{{h.website.logoheader}}"
+                    *ngIf="toggle2 == 0" width="100" height="100" />
+                 
+                  <input type="file" [(ngModel)]="h.website.logoheader" class="form-control resume" formControlName="logoheader"
+                    *ngIf="toggle2 == 1" />
+                </mat-form-field>
+              </th>
+              <th hidden>
+
+                <mat-form-field>
+
+                  <img class="img-thumbnail d-flex align-self-center" src="../../../assets/img/{{h.website.logofooter}}"
+                    *ngIf="toggle2 == 0" width="100" height="100" />
+                  <input type="file" placeholder="location" class="form-control resume"
+                  [(ngModel)]="h.website.logofooter"  formControlName="logofooter" *ngIf="toggle2 == 1" />
+                </mat-form-field>
+              </th>
+             
+              <th style="border-spacing:30px 0px; " class="w-25">
+                   <img class="img-thumbnail d-flex align-self-center" src="../../../assets/img/{{h.website.heroimg1}}"
+                    *ngIf="toggle2 == 0" width="100" height="100" />
+ <mat-form-field>
+              
+                  <input type="file" class="form-control resume"   [(ngModel)]="h.website.heroimg1" formControlName="heroimg1"
+                    *ngIf="toggle2 == 1" />
+                </mat-form-field>
+              </th>
+              <th style="border-spacing:30px 0px; " class="w-25">
+                <img class="img-thumbnail d-flex align-self-center" src="../../../assets/img/{{h.website.heroimg}}"
+                    *ngIf="toggle2 == 0" width="100" height="100" />
+   <mat-form-field>
+               
+                  <input type="file" placeholder="location" class="form-control resume"
+                  [(ngModel)]="h.website.heroimg" formControlName="heroimg" *ngIf="toggle2 == 1" />
+                </mat-form-field>
+              </th>
+              <th style="border-spacing:30px 0px; " class="w-25">
+                <button  class="btn btn-outline-secondary px-3 py-1.5" (click)="toggles1()"> update Website</button>
+              </th>
+            </tr>
+          </table>
+        </form>
+      </div>
+
+    </div>
+
+
+
+    <div class="charts my-5">
+      <h4> Mange Contact Information </h4>
+      <div >
+
+        <form [formGroup]="updateContact">
+
+          <table>
+            <tr>
+            
+              <th scope="col">
+
+
+                <mat-label *ngIf="toggle3 == 0">
+                  {{h.contact.email }}
+                </mat-label>
+
+                <input type="text"  [(ngModel)]="h.contact.email" class="form-control resume"
+                  formControlName="email" *ngIf="toggle3 == 1" />
+      
+                </th>
+            
+<th class="w-25"></th>
+
+
+              <th scope="col">
+
+
+                <mat-label *ngIf="toggle3 == 0">
+                  {{h.contact.phone }}
+                </mat-label>
+
+                <input type="text" placeholder={{h.contact.phone}}  [(ngModel)]="h.contact.phone"
+                  class="form-control resume text-sm" formControlName="phone" *ngIf="toggle3 == 1" />
+              </th>
+             
+<th  class="w-25"></th>
+              <th  class="m-2">
+                <button  class="btn btn-outline-secondary px-3 py-1.5" (click)="toggles2()"> update Contact</button>
+              </th>
+            </tr>
+          </table>
+        </form>
+      </div>
+
+    </div>
+    <!--
+
+   -->
+    <div class="charts my-5">
+      <h4> Mange About Information </h4>
+      <div class="flex flex-justify-between flex-align-center my-5">
+
+        <form [formGroup]="updateAbout">
+
+          <table style="border-spacing:30px 0px; ">
+            <tr>
+
+              <th style="border-spacing:30px 0px; " class="w-25">
+
+
+                <p *ngIf="toggle4 == 0">
+                  {{h.about.des1 }}
+                </p>
+
+                <textarea cols="40" rows="15"  [(ngModel)]="h.about.des1"  formControlName="des1" *ngIf="toggle4 == 1">
+               
+                </textarea>
+              </th>
+
+              <th style="border-spacing:30px 0px; " class="w-25">
+
+
+                <p *ngIf="toggle4 == 0">
+                  {{h.about.des2 }}
+                </p>
+
+                <textarea  [(ngModel)]="h.about.des2" cols="40" rows="15" formControlName="des2" *ngIf="toggle4 == 1">
+             
+              </textarea>
+              </th>
+            </tr>
+            <tr>
+              <th style="border-spacing:30px 0px; " class="w-25">
+                <img class="img-thumbnail d-flex align-self-center" src="../../../assets/img/{{h.about.img1}}"
+                  *ngIf="toggle4 == 0" width="200" height="100" />
+
+                <input type="file" class="form-control resume"  [(ngModel)]="h.about.img1" formControlName="img1" *ngIf="toggle4 == 1" />
+              </th>
+
+              <th style="border-spacing:30px 0px; " class="w-25">
+                <img class="img-thumbnail d-flex align-self-center" src="../../../assets/img/{{h.about.img2}}"
+                  *ngIf="toggle4 == 0" width="200" height="100" />
+
+                <input type="file" class="form-control resume"  [(ngModel)]="h.about.img2" formControlName="img2" *ngIf="toggle4 == 1" />
+              </th>
+            </tr>
+            <tr>
+              <th style="border-spacing:30px 0px; " class="w-25">
+                <button  class="btn btn-outline-secondary px-3 py-1.5" (click)="toggles3()"> update About</button>
+              </th>
+            </tr>
+          </table>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"
+    integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>

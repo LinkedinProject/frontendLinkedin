@@ -1,0 +1,536 @@
+<!--<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+    <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+        <h1 class="m-0 text-primary">JobEntry</h1>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+
+            <a href="home" class="nav-item nav-link">Home</a>
+
+            <a href="userprofile" class="nav-item nav-link active">Home Profile</a>
+            <a href="applied" class="nav-item nav-link">My Applied </a>
+
+            
+
+
+
+
+        </div>
+
+    </div>
+</nav>
+<br>
+<div class="container">
+    <div class="main-body">
+
+        <div class="row">
+            <div class="col-lg-4">
+                <form [formGroup]="form">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <img src="./assets/img/{{homs.oneuser.imageuser}}" class="rounded-circle p-1 bg-primary"
+                                    width="100" height="100">
+
+                               
+
+
+
+                                <div class="mt-3">
+
+                                    <h4>{{homs.oneuser.fname}} {{homs.oneuser.lname}}</h4>
+                                    <p class="text-secondary mb-1">{{homs.oneuser.email}}</p>
+                                    <p class="text-muted font-size-sm">{{homs.oneuser.address}}</p>
+                                    <form [formGroup]="form">
+                                        <input formControlName="imageuser" style="display:none" type="file" #file
+                                            (change)="image(file.files)">
+                                        <button class="btn btn-outline-primary" (click)=" file.click()">Edit
+                                            image</button>
+                                        <button class="btn btn-primary" (click)="editedu()">Education</button>
+                                    </form>
+
+
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-globe me-2 icon-inline">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                                            <path
+                                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                            </path>
+                                        </svg>Website</h6>
+                                    <span class="text-secondary">https://bootdey.com</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-github me-2 icon-inline">
+                                            <path
+                                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                            </path>
+                                        </svg>Github</h6>
+                                    <span class="text-secondary">bootdey</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-twitter me-2 icon-inline text-info">
+                                            <path
+                                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                            </path>
+                                        </svg>Twitter</h6>
+                                    <span class="text-secondary">@bootdey</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-instagram me-2 icon-inline text-danger">
+                                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                        </svg>Instagram</h6>
+                                    <span class="text-secondary">bootdey</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-facebook me-2 icon-inline text-primary">
+                                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                                            </path>
+                                        </svg>Facebook</h6>
+                                    <span class="text-secondary">bootdey</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <form [formGroup]="form">
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0" style="font-size: 15px;">First Name</h6>
+                                </div>
+
+                                <div class="col-sm-9 text-secondary">
+
+                                    <input type="text" class="form-control" formControlName="fname"
+                                        [(ngModel)]="homs.oneuser.fname">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0" style="font-size: 15px;">Last Name</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form-control" formControlName="lname"
+                                        [(ngModel)]="homs.oneuser.lname">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0" style="font-size: 15px;">Phone</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form-control" formControlName="phone"
+                                        [(ngModel)]="homs.oneuser.phone">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0" style="font-size: 15px;">Address</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form-control" formControlName="address"
+                                        [(ngModel)]="homs.oneuser.address">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="button" class="btn btn-primary px-4" [disabled]="form.invalid"
+                                        (click)="save()" value="Save Changes">
+                                </div>
+
+                                <a href="./assets/img/{{homs.oneuser.imageuser}}">View Cv </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+           
+        
+            </div>
+        </div>
+    </div>
+</div>
+<app-f></app-f>
+-->
+
+
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
+    style="top: -100px;    transition: .5s;box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 18%) !important;
+position: sticky; height: 80px;   display: flex;flex-wrap: wrap;align-items: center;justify-content: space-between;z-index: 1020;">
+    <a style="color: rgba(0,0,0,0.9);text-align: center !important;    padding-top: 0 !important;
+    padding-bottom: 0 !important;padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;align-items: center !important;    display: flex !important;    margin-right: 1rem;
+    font-size: 1.25rem;
+    white-space: nowrap; height: 75px;" href="index.html"
+        class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+        <h1 class="m-0 text-primary" style="font-size: calc(1.375rem + 1.5vw);font-family: Inter,sans-serif;
+                font-weight: 700;
+                line-height: 1.2;">JobEntry</h1>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+
+            <a href="home" style="font-size: 18px;text-transform: uppercase;outline: none;"
+                class="nav-item nav-link">Home</a>
+
+            <a href="userprofile" style="font-size: 18px;text-transform: uppercase;outline: none;"
+                class="nav-item nav-link active">Home Profile</a>
+            <a href="applied" style="font-size: 18px;text-transform: uppercase;outline: none;"
+                class="nav-item nav-link">My Applied </a>
+
+            <a (click)="clears()" class="nav-item nav-link"
+                style="font-size: 18px;text-transform: uppercase;outline: none;">logout</a>
+
+
+
+
+        </div>
+
+    </div>
+</nav>
+<br>
+<div class="container">
+    <div class="main-body">
+
+        <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+                <form [formGroup]="form">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <img src="../../../assets/userimg/{{homs.oneuser.imageuser}}" style="height: 140px; width: 140px;"
+                                    alt="img" class="rounded-circle">
+                                <div class="mt-3">
+                                    <h4>{{homs.oneuser.fname}} {{homs.oneuser.lname}}</h4>
+                                    <p class="text-secondary mb-1">{{homs.oneuser.email}}</p>
+                                    <p class="text-muted font-size-sm">{{homs.oneuser.address}}</p>
+                                    <form [formGroup]="form">
+                                        <input formControlName="imageuser" style="display:none" type="file" #file
+                                            (change)="image(file.files)">
+                                       
+
+                                        <!-- <button class="btn btn-outline-success" ><a href="./assets/img/{{homs.oneuser.imageuser}}">View Cv </a></button>
+                                    -->
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                    <div class="card">
+                        <h2 class="d-flex align-items-center mb-3">Update Profile </h2>
+                        <div class="card-body">
+                            <form [formGroup]="form">
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0" style="font-size: 15px;">First Name</h6>
+                                    </div>
+                    
+                                    <div class="col-sm-9 text-secondary">
+                    
+                                        <input type="text" class="form-control" formControlName="fname" [(ngModel)]="homs.oneuser.fname">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0" style="font-size: 15px;">Last Name</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        <input type="text" class="form-control" formControlName="lname" [(ngModel)]="homs.oneuser.lname">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0" style="font-size: 15px;">Phone</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        <input type="text" class="form-control" formControlName="phone" [(ngModel)]="homs.oneuser.phone">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0" style="font-size: 15px;">Address</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        <input type="text" class="form-control" formControlName="address"
+                                            [(ngModel)]="homs.oneuser.address">
+                                    </div>
+                                </div>
+                    
+                                <div class="row">
+                                    <div class="col-sm-3"></div>
+                                    <div class="col-sm-9 text-secondary">
+                                        <input type="button" class="btn btn-primary px-4" [disabled]="form.invalid" (click)="save()"
+                                            value="Save Changes">
+                                    </div>
+                    
+                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="d-flex align-items-center mb-3">Fill/Update Education </h2>
+                        <form [formGroup]="form2">
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0" style="font-size: 15px;">Major</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input id="middle-name" value="{{homs.userEdu.major}}" formControlName="major" type="text"
+                                        class="form-control resume">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0" style="font-size: 15px;">UNIVERSITY</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input id="surname-name" [value]="homs.userEdu.univercity" type="text" formControlName="univercity"
+                                        class="form-control resume">
+                                </div>
+                            </div>
+                
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0" style="font-size: 15px;">DATE GRADEUATE</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                
+                                    <input type="date" [value]="homs.userEdu.dategrade" formControlName="dategrade"
+                                        class="form-control resume">
+                                </div>
+                            </div>
+                
+                
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0" style="font-size: 15px;">DEGREE</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                
+                                    <input type="text" [value]="homs.userEdu.degree" formControlName="degree"
+                                        class="form-control resume">
+                                </div>
+                            </div>
+                
+                            <div class="row">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="submit" class="btn btn-primary px-4" (click)="fills()" value="Save Changes ">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        <div class="row">
+           
+<!-- ...................   Jobtitle   describtion   Companyname  Datefrom  Dateto ..................... -->
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="d-flex align-items-center mb-3">Fill Experiance  </h2>
+                <form [formGroup]="expForm">
+                    <div class="row mb-3">
+                        <div class="col-sm-5">
+                            <h6 class="mb-0" style="font-size: 15px;">Job Title</h6>
+                        </div>
+                        <div class="col-sm-7 text-secondary">
+                            <input id="middle-name"   formControlName="Jobtitle" type="text"
+                                class="form-control resume">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-5">
+                            <h6 class="mb-0" style="font-size: 15px;">Company Name</h6>
+                        </div>
+                        <div class="col-sm-7 text-secondary">
+                            <input id="surname-name"   type="text"
+                                formControlName="Companyname" class="form-control resume">
+                        </div>
+                    </div>
+    
+                    <div class="row mb-3">
+                        <div class="col-sm-5">
+                            <h6 class="mb-0" style="font-size: 15px;">Start Date</h6>
+                        </div>
+                        <div class="col-sm-7 text-secondary">
+    
+                            <input type="date"  formControlName="Datefrom"
+                                class="form-control resume">
+                        </div>
+                    </div>
+    
+                        <div class="row mb-3">
+                            <div class="col-sm-5">
+                                <h6 class="mb-0" style="font-size: 15px;">End Date</h6>
+                            </div>
+                            <div class="col-sm-7 text-secondary">
+                        
+                                <input type="date" formControlName="Dateto" class="form-control resume">
+                            </div>
+                        </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-5">
+                            <h6 class="mb-0" style="font-size: 15px;">Describtion</h6>
+                        </div>
+                        <div class="col-sm-7 text-secondary">
+    
+                            <textarea type="text" rows="2"  formControlName="describtion"
+                                class="form-control resume">
+                                </textarea>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="submit" class="btn btn-primary px-4" (click)="insertExp()" value="Save Changes ">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        
+    </div>
+
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="d-flex align-items-center mb-3">Add Project </h2>
+                    <form [formGroup]="projectForm">
+                        <div class="row mb-3">
+                            <div class="col-sm-5">
+                                <!-- // UerId Startdate Enddate ProDescription PROLINK proTitle -->
+                                <h6 class="mb-0" style="font-size: 15px;">Project Title</h6>
+                            </div>
+                            <div class="col-sm-7 text-secondary">
+                                <input id="middle-name" formControlName="proTitle" type="text" class="form-control resume">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-5">
+                                <h6 class="mb-0" style="font-size: 15px;">Project Link</h6>
+                            </div>
+                            <div class="col-sm-7 text-secondary">
+                                <input id="surname-name" type="text" formControlName="PROLINK" class="form-control resume">
+                            </div>
+                        </div>
+        
+                        <div class="row mb-3">
+                            <div class="col-sm-5">
+                                <h6 class="mb-0" style="font-size: 15px;">Start Date</h6>
+                            </div>
+                            <div class="col-sm-7 text-secondary">
+        
+                                <input type="date" formControlName="Startdate" class="form-control resume">
+                            </div>
+                        </div>
+        
+                        <div class="row mb-3">
+                            <div class="col-sm-5">
+                                <h6 class="mb-0" style="font-size: 15px;">End Date</h6>
+                            </div>
+                            <div class="col-sm-7 text-secondary">
+        
+                                <input type="date" formControlName="Enddate" class="form-control resume">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-5">
+                                <h6 class="mb-0" style="font-size: 15px;">Describtion</h6>
+                            </div>
+                            <div class="col-sm-7 text-secondary">
+        
+                                <textarea type="text" rows="2" formControlName="ProDescription" class="form-control resume">
+                                        </textarea>
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-9 text-secondary">
+                                <input type="submit" class="btn btn-primary px-4" (click)="insertPro()" value="Save Changes ">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        
+        
+        
+        </div>
+        </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-f></app-f>

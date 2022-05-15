@@ -1,0 +1,45 @@
+<h2 mat-dialog-title>Add about </h2>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="CreateForm" class="example-form">
+        <ul>
+            <li>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Enter the description1 </mat-label>
+          <input type="text" matInput formControlName="des1" placeholder="description1">
+          <mat-error *ngIf="CreateForm.controls['des1'].hasError('required')">
+           desc name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+</li>
+<li>
+    <input type="file" #file placeholder="Choose Image" 
+    formControlName="img1" (change)="uploadImage(file.files)" 
+    style="display: none;"
+    >
+    <button (click)="file.click()" class="btn btn-success">Upload Image</button>
+</li>
+<li>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Enter the description2 </mat-label>
+      <input type="text" matInput formControlName="des2" placeholder="description2">
+      <mat-error *ngIf="CreateForm.controls['des2'].hasError('required')">
+       desc name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+</li>
+<li>
+    <input type="file" #file placeholder="Choose Image" 
+    formControlName="img2" (change)="uploadImage(file.files)" 
+    style="display: none;"
+    >
+    <button (click)="file.click()" class="btn btn-success">Upload Image</button>
+</li>
+         
+        </ul>
+      </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button [disabled]="!CreateForm.valid" mat-button [mat-dialog-close]="true"(click)="save()"  cdkFocusInitial>Save</button>
+</mat-dialog-actions>

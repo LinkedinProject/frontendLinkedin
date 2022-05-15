@@ -1,0 +1,153 @@
+<app-h></app-h>
+
+<div class="container my-5">
+
+  <div class="card text-black h-75" style="border-radius: 25px; ">
+
+    <div class="card-body  ">
+      <div class="row justify-content-center">
+        <div class="col-6 ">
+
+          <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+          <form class="mx-1 mx-md-4" [formGroup]="form">
+
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+              <div class="form-outline flex-fill mb-0">
+                <input matInput formControlName="compname" type="text" id="form3Example1c" placeholder="company Name"
+                  class="form-control" />
+                <mat-error *ngIf="form.controls['compname'].hasError('required')">
+                  Company Name is <strong>required</strong>
+                </mat-error>
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+              <div class="form-phone flex-fill mb-0">
+                <input matInput formControlName="phone" type="text" id="form3Example1c" placeholder="Phone"
+                  class="form-control" />
+                <mat-error *ngIf="form.controls['phone'].hasError('minlength') &&
+                  !form.controls['phone'].hasError('required')">
+                  Please enter valid phone
+                </mat-error>
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+              <div class="form-phone flex-fill mb-0">
+                <input matInput formControlName="location" type="text" id="form3Example1c" placeholder="location"
+                  class="form-control" />
+                <mat-error *ngIf="form.controls['location'].hasError('required')">
+                  Location is <strong>required</strong>
+                </mat-error>
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-image fa-lg me-3 fa-fw"></i>
+              <div class="form-outline flex-fill mb-0">
+                <input placeholder="Logo" type="file" formControlName="logo" class="form-control bg-white" #file
+                  (change)="image(file.files)">
+              </div>
+            </div>
+
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-book fa-lg me-3 fa-fw"></i>
+              <div class="form-outline flex-fill mb-0">
+                <input placeholder="specialties" matInput formControlName="specialties" type="text" id="form3Example1c"
+                  class="form-control" />
+                <mat-error *ngIf="form.controls['specialties'].hasError('required')">
+                  Specialties is <strong>required</strong>
+                </mat-error>
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-globe fa-lg me-3 fa-fw"></i>
+              <div class="form-outline flex-fill mb-0">
+                <input placeholder="ًwebsite URL" matInput formControlName="website_url" type="text" id="form3Example1c"
+                  class="form-control" />
+                <mat-error *ngIf="form.controls['website_url'].hasError('required')">
+                  website is <strong>required</strong>
+                </mat-error>
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-clipboard fa-lg me-3 fa-fw"></i>
+              <div class="form-outline flex-fill mb-0">
+                <textarea rows="3" placeholder="descreption" formControlName="descreption" id="form3Example1c"
+                  class="form-control">
+                </textarea>
+                <mat-error *ngIf="form.controls['descreption'].hasError('required')">
+                  description is <strong>required</strong>
+                </mat-error>
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+              <div class="form-outline flex-fill mb-0">
+                <input placeholder="Email" matInput formControlName="email" type="email" id="form3Example3c"
+                  class="form-control" />
+                <mat-error *ngIf="form.controls['email'].hasError('email') &&
+                  !form.controls['email'].hasError('required')">
+                  Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="form.controls['email'].hasError('required')">
+                  Email is <strong>required</strong>
+                </mat-error>
+              </div>
+            </div>
+
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+              <div class="form-outline flex-fill mb-0">
+                <input placeholder="Password" type="password" matInput formControlName="pass" id="form3Example4c"
+                  class="form-control" />
+                <mat-error *ngIf="form.controls['pass'].hasError('minlength')
+                  && !form.controls['pass'].hasError('required')">
+                  Please enter strong password
+                </mat-error>
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+
+              <div class="form-outline flex-fill mb-0">
+
+                <input type="password" matInput formControlName="confirmpassword" id="form3Example4c"
+                  (change)="onChange()" name="password" placeholder="Re-type Password" class="form-control" />
+                <mat-error
+                  *ngIf="form.controls['confirmpassword'].hasError('minlength') && !form.controls['confirmpassword'].hasError('required')">
+                  Please enter strong password
+                </mat-error>
+                <!-- <mat-error *ngIf="form.controls['confirmpassword'].hasError('required')">
+                        password is <strong>required</strong>
+                      </mat-error> -->
+                <mat-error *ngIf="form.controls['confirmpassword'].hasError('mismatch')">
+                  confirm password must match with password
+                </mat-error>
+              </div>
+            </div>
+
+
+
+            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+              <button type="submit" (click)="s()" class="btn btn-primary btn-lg">Register Now</button>
+            </div>
+
+
+          </form>
+
+        </div>
+        <div class="col-6" style="padding-top:100px;">
+
+          <img src="https://img.freepik.com/free-photo/top-view-business-people-office_52137-3570.jpg?w=500"
+            alt="Sample image">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-f></app-f>

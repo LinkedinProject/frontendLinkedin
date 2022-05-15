@@ -1,0 +1,81 @@
+<mat-dialog-content  class="mat-typography">
+  <div class="row">
+    <form [formGroup]="dateForm">
+       <h3>Search Between Two  Dates For Job Applicants</h3>
+      <div class="row">
+        <div class="col-4">
+ 
+          <div class="input-group date form_date" data-link-field="dtp_input1">
+          
+            <label for="" class="badge badge-secondary" style="height: 38px;"> From</label>
+            <input type="date"  formControlName="date1" class="form-control btn btn-outline-secondary" />
+          </div>
+          <input type="hidden" id="dtp_input1" value="" />
+        </div>
+        <div class="col-4">
+          <div class="input-group date form_date" data-link-field="dtp_input2">
+            <label for="" style="height: 38px;" class="badge badge-secondary">To</label>
+            <input type="date" formControlName="date2" class="form-control btn btn-outline-secondary" />
+          </div>
+        </div>
+        <!-- END FILTER BY DATE -->
+        <div class="col">
+          <input type="submit" class="btn btn-outline-secondary" style="height: 38px;" value="Submit " (click)="betweendate2()" />
+        </div>
+      </div>
+    </form>
+  </div>
+<br>
+<br>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="list list-row block">
+        <div *ngFor="let x of h.l_of_onepost" class="list-item" data-id="7">
+          <div>
+            <a data-abc="true"><span class="w-48 avatar "><img
+                  src="../../assets/userimg/{{x.imageuser}}" class="rounded-circle" style="height:40px;width:40px" alt="." /></span></a>
+          </div>
+          <div class="flex">
+            <a href="#" class="item-author text-color" data-abc="true">{{
+              x.fname
+            }}</a>
+            <div class="no-wrap">
+              <div class="item-date text-muted text-sm d-none d-md-block">
+                Apply Date {{ x.applay_date | date: "mediumDate" }}
+              </div>
+            </div>
+          </div>
+
+          <div class="no-wrap">
+            <button type="button"   [mat-dialog-close]="true"  class="btn btn-link">
+              <a href="./assets/img/{{x.uploadcv}}"><i class="bi bi-file-person-fill"></i></a>
+            </button>
+          </div>
+          <div class="no-wrap">
+            <!-- <a href="./assets/img/{{x.uploadcv}}">View Profile </a> -->
+            <button type="button"   [mat-dialog-close]="true" class="btn btn-link" (click)="p(x.user_Id)">
+              View Profile
+            </button>
+          </div>
+
+<span  [hidden]="x.stutus=='Waiting...'">{{x.stutus}}</span>
+          <div class="no-wrap" >
+            <div class="item-date text-muted text-sm d-none d-md-block">
+              <button class="btn btn-outline-primary"   [hidden]="x.stutus!='Waiting...'" (click)="accept(x.application_Id)">
+                Accept
+              </button>
+            
+            </div>
+          </div>
+          <div class="no-wrap">
+            <div class="item-date text-muted text-sm d-none d-md-block">
+              <button class="btn btn-outline-danger"  [hidden]="x.stutus!='Waiting...'" (click)="reject(x.application_Id)">
+                reject
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>

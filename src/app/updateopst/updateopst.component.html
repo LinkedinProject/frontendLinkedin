@@ -1,0 +1,65 @@
+<h1 mat-dialog-title>Update Job</h1>
+<mat-dialog-content>
+  <div class="testbox">
+    <form [formGroup]="updatepost">
+
+      <br />
+
+      <div class="colums">
+
+        <div class="item">
+          <label for="salary">Salary<span>*</span></label>
+          <input type="number" placeholder="salary" formControlName="salary" [(ngModel)]="h.xx.salary" />
+
+        </div>
+        <div class="item">
+          <label for="location">Location<span>*</span></label>
+          <!-- <input id="phone" type="tel" name="phone" required /> -->
+          <input type="text" placeholder="location" formControlName="location" [(ngModel)]="h.xx.location" />
+
+        </div>
+        <div class="item">
+          <label for="street">Select Education Level<span>*</span></label>
+          <select formControlName="edu_level" [(ngModel)]="h.xx.edu_Level">
+            <option value="PHD">PHD</option>
+            <option value="Master">Master</option>
+            <option value="bachelor">bachelor</option>
+          </select>
+        </div>
+
+
+        <div class="item">
+          <label for="state">Deadline<span>*</span></label>
+          <input type="date" placeholder="end_date" formControlName="end_date"
+            [ngModel]="h.xx.end_Date | date :'yyyy-MM-dd'" />
+
+          <!-- <input id="state" type="text" name="state" required /> -->
+        </div>
+
+
+        <div class="item">
+          <p>Select Job Type</p>
+          <select formControlName="job_ype" [(ngModel)]="h.xx.job_ype">
+            <option value="1">Full Time</option>
+            <option value="0">Part Time</option>
+          </select>
+        </div>
+        <div class="item">
+          <p>Select Onsite/Remote</p>
+          <select formControlName="onsite_remote" [(ngModel)]="h.xx.onsite_remote">
+            <option value="0">remote</option>
+            <option value="1">onsite</option>
+            <option value="2">hybrid</option>
+          </select>
+        </div>
+      </div>
+
+
+
+
+      <div class="btn-block">
+        <button type="submit" (click)="up()">Submit</button>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>

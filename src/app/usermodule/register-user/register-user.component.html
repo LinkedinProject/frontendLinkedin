@@ -1,0 +1,315 @@
+<!--<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+<title>Bootstrap Simple Registration Form</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+
+
+
+<div class="signup-form">
+    <form [formGroup]="form"     accept="image/*"  >
+        <h2>Register</h2>
+        <p class="hint-text">Create your account. </p>
+        <div class="form-group">
+            <div class="row">
+
+                <div class="col"><input type="text" matInput formControlName="fname" class="form-control"
+                        name="first_name" placeholder="First Name" >
+                         <mat-error
+                    *ngIf="form.controls['fname'].hasError('required')">
+                   First Name is requirde
+                </mat-error>
+                </div>
+
+                <div class="col"><input type="text" matInput formControlName="lname" class="form-control"
+                        name="last_name" placeholder="Last Name" required="required">
+                        <mat-error *ngIf="form.controls['lname'].hasError('required')">
+                            Last Name is requirde
+                        </mat-error>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" matInput formControlName="email" name="email" placeholder="Email"
+                required="required">
+<mat-error *ngIf="form.controls['email'].hasError('email')">
+    Please Enter Valid Email
+</mat-error>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col"><input type="text" matInput formControlName="pass" class="form-control"
+                        name="first_name" placeholder="password" required="required">
+                    <mat-error
+                        *ngIf="form.controls['pass'].hasError('minlength') ">
+                         Enter strong password
+                    </mat-error>
+                </div>
+                <div class="col"><input type="text" class="form-control" name="last_name" placeholder="Confirm password"
+                        required="required">
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" matInput formControlName="phone" name="email" placeholder="Phone"
+                required="required">
+                <mat-error *ngIf="form.controls['phone'].hasError('required')">
+                   phone is requirde
+                </mat-error>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" name="first_name" placeholder="Your Address"
+                        required="required" matInput formControlName="address">
+                        <mat-error *ngIf="form.controls['address'].hasError('required')">
+                            enter your address
+                        </mat-error>
+                </div>
+                <div class="col">
+                    <input type="date" matInput formControlName="birthdate" class="form-control" name="last_name"
+                        placeholder="Birthdate" required="required">
+                        <mat-error *ngIf="form.controls['birthdate'].hasError('required')">
+                            enter your address
+                        </mat-error>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+        <input formControlName="imageuser" style="display:none" type="file" accept="image/*"   #file (change)="image(file.files)">
+
+        <button (click)=" file.click()">upload</button>
+        </div>
+        <div class="form-group">
+            <mat-radio-group aria-label="Select an option" formControlName="gender">
+                <mat-radio-button value="m">male </mat-radio-button>&nbsp;
+                <mat-radio-button value="f">female</mat-radio-button>
+            </mat-radio-group><br>
+            <mat-error *ngIf="form.controls['gender'].hasError('required')">
+                choiese your gender
+            </mat-error>
+
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" matInput formControlName="edu_level" name="email" placeholder="edu"
+                required="required">
+                <mat-error *ngIf="form.controls['edu_level'].hasError('required')">
+                    choiese your edu_level
+                </mat-error>
+        </div>
+
+        <div class="form-group">
+            <button  [disabled]="!form.valid" (click)="s()" class="btn btn-success btn-lg btn-block"
+             >Register Now</button>
+        </div>
+    </form>
+</div>
+
+
+<form  >
+<div>
+<input type="text"  [formControl]="f"  placeholder="f" >
+<mat-error *ngIf="form.controls['f'].hasError('required')">
+    Last Name is requirde
+</mat-error>
+
+</div>
+<div>
+<input type="text" [formControl]="l"    placeholder="l">
+<mat-error *ngIf="form.controls['l'].hasError('required')">
+    Last Name is requirde
+</mat-error>
+</div>
+<div>
+<input type="text"  [formControl]="p"  placeholder="pj">
+<mat-error *ngIf="form.controls['p'].hasError('required')">
+    Last Name is requirde
+</mat-error>
+</div>
+<input type="submit"  [disabled]="!f.valid"  >
+</form>
+
+
+
+
+
+-->
+
+
+
+
+
+
+
+
+<app-h></app-h>
+
+<div class="container my-5">
+
+  <div class="card text-black" style="border-radius: 25px;">
+
+    <div class="card-body  ">
+      <div class="row justify-content-center">
+        <div class="col-6   ">
+
+          <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+          <form class="mx-1 mx-md-4" [formGroup]="form" accept="image/*">
+
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+              <div class="form-outline flex-fill mb-0">
+                <input type="text" matInput formControlName="fname" class="form-control" name="first_name"
+                  placeholder="First Name">
+                <mat-error *ngIf="form.controls['fname'].hasError('required')">
+                  First Name is <strong>required</strong>
+                </mat-error>
+              </div>
+              &nbsp;&nbsp;&nbsp;
+              <div class="form-outline flex-fill mb-0">
+                <input type="text" matInput formControlName="lname" class="form-control" name="last_name"
+                  placeholder="Last Name">
+                <mat-error *ngIf="form.controls['lname'].hasError('required')">
+                  Last Name is <strong>required</strong>
+                </mat-error>
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-phone fa-lg me-3 fa-fw"></i>
+              <div class="form-outline flex-fill mb-0">
+                <input type="text" class="form-control" matInput formControlName="phone" name="phone"
+                  placeholder="Phone" required="required">
+                <mat-error *ngIf="form.controls['phone'].hasError('minlength') &&
+                         !form.controls['phone'].hasError('required')">
+                  Please enter valid phone
+                </mat-error>
+              </div>
+              &nbsp;&nbsp;&nbsp;
+              <div class="form-outline flex-fill mb-0">
+
+                <input type="text" class="form-control" name="address" placeholder="Your Address" required="required"
+                  matInput formControlName="address">
+              </div>
+            </div>
+
+
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+              <div class="form-outline flex-fill mb-0">
+                <input type="text" class="form-control" matInput formControlName="email" name="email"
+                  placeholder="Email" required="required">
+                <mat-error *ngIf="form.controls['email'].hasError('email') &&
+                         !form.controls['email'].hasError('required')">
+                  Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="form.controls['email'].hasError('required')">
+                  Email is <strong>required</strong>
+                </mat-error>
+
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+              <div class="form-outline flex-fill mb-0">
+                <input type="password" matInput formControlName="pass" id="form3Example4c" class="form-control"
+                  placeholder="Passsword" />
+                <mat-error *ngIf="form.controls['pass'].hasError('minlength')
+                        && !form.controls['pass'].hasError('required')">
+                  Please enter strong password
+                </mat-error>
+                <!-- <mat-error *ngIf="form.controls['pass'].hasError('required')">
+                        password is <strong>required</strong>
+                      </mat-error> -->
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+
+              <div class="form-outline flex-fill mb-0">
+
+                <input type="password" matInput formControlName="confirmpassword" id="form3Example4c"
+                  (change)="onChange()" name="password" placeholder="Re-type Password" class="form-control" />
+                <mat-error
+                  *ngIf="form.controls['confirmpassword'].hasError('minlength') && !form.controls['confirmpassword'].hasError('required')">
+                  Please enter strong password
+                </mat-error>
+                <!-- <mat-error *ngIf="form.controls['confirmpassword'].hasError('required')">
+                        password is <strong>required</strong>
+                      </mat-error> -->
+                <mat-error *ngIf="form.controls['confirmpassword'].hasError('mismatch')">
+                  confirm password must match with password
+                </mat-error>
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-calendar fa-lg me-3 fa-fw"></i>
+              <div class="form-outline flex-fill mb-0">
+                <input type="date" matInput formControlName="birthdate" class="form-control" name="birthdate"
+                  placeholder="Birthdate" required="required">
+
+              </div>
+              &nbsp;&nbsp;&nbsp;
+              <div class="form-outline flex-fill mb-0">
+
+                <div class="row">
+                  <select formControlName="edu_level" class="form-control">
+                    <option [ngValue]="" disabled [attr.selected]="nrSelect" hidden> Education Level</option>
+                    <option value="PHD">PHD</option>
+                    <option value="Master">Master</option>
+                    <option value="bachelor">bachelor</option>
+                  </select>
+                </div>
+                <!-- <input type="text" class="form-control" matInput formControlName="edu_level" name="email"
+                  placeholder="Education Level" required="required">-->
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-image fa-lg me-3 fa-fw"></i>
+              <div class="form-outline flex-fill mb-0">
+                <input accept="image/*" type="file" formControlName="logo" class="form-control bg-white" #file
+                  (change)="image(file.files)">
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-venus fa-lg me-3 fa-fw"></i>
+              <div class="form-outline flex-fill mb-0">
+                <mat-radio-group aria-label="Select an option" formControlName="gender">
+                  <mat-radio-button value="m">male </mat-radio-button>&nbsp;
+                  <mat-radio-button value="f">female</mat-radio-button>
+                </mat-radio-group><br>
+
+              </div>
+            </div>
+
+
+
+            <button type="submit" (click)="s()" class="btn btn-primary btn-lg" >
+              Register Now</button>
+          </form>
+
+        </div>
+        <div class="col-6  " style="padding-top:100px;">
+          <img src="https://i.pinimg.com/564x/58/d9/db/58d9db7c27a1bb0f9e6dfe8a2c8ed480.jpg" alt="" srcset="">
+          <!--   style="background-image: url('https://i.pinimg.com/564x/b7/17/ba/b717bac9c32f1615a9e7f374eea36878.jpg');
+              background-repeat: no-repeat; ;" -->
+          <!-- <img src="https://i.pinimg.com/564x/66/ec/36/66ec36c4985eb34b8ffef5a2cb56c955.jpg" alt="Sample image"> -->
+          <!-- src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<app-f></app-f>

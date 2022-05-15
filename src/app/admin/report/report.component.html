@@ -1,0 +1,90 @@
+<link href="http://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet" />
+
+<body class="flex">
+  <app-nanav-dashboard-admin></app-nanav-dashboard-admin>
+
+  <section  class="section__main mb-5">
+      <div class="bg-primary flex flex-justify-between flex-align-center banner">
+        <div>
+          <h1 class="text-4xl text-white mb-2">Report</h1>
+          <h1 class="text-4xl text-white mb-4">Charts </h1>
+          <div class="banner__cta">
+      
+      
+            <button class="button text-black py-4 px-8" style="color: rgb(30, 114, 142);" (click)="x()"> Save</button>
+          </div>
+        </div>
+        <div class="banner__img">
+          <img src="https://i.ibb.co/vBkwrv5/banner.png" alt="banner">
+        </div>
+      </div>
+
+    <h2  >Search Between Dates For Company Registered</h2>
+<!--<button (click)="x()"> save</button>-->
+    <div   class=" row  overflow-auto w-100 my-5"  >
+      <div class="col-2">
+        <form [formGroup]="dateForm">
+          <div class="row">
+            <label for="" class="p-2 mt-5">Select Tow Dates</label>
+            <label for="" class="btn btn-outline-secondary  p-2 mt-2">From</label>
+            <input type="date" formControlName="date1" class="form-control btn btn-outline-secondary py-6"  />
+            <label for="" class="btn btn-outline-secondary p-2 mt-2">To</label>
+            <input type="date" formControlName="date2" class="form-control btn btn-outline-secondary py-2" />
+            <input type="submit" class="btn btn-outline-secondary p-2 mt-2" value="Submit"
+              (click)="betweendateJobs()" />
+          </div>
+        </form>
+      </div>
+
+      <div class="col"  >
+        <div  id="c"  #c>
+          <canvas  class="w-75" height="100" baseChart id="chart-line" class="chart-canvas" #myChart
+            [data]="barChartData" [type]="'bar'">
+          </canvas>
+        </div>
+      </div>
+    </div>
+    <hr class="m-5">
+    <h2 class="m-3 text-center">Search Between Dates For Company Registered</h2>
+    <div class="w-75 my-5 mx-auto">
+
+
+      <div>
+        <form [formGroup]="dateForm">
+          <div class="w-100">
+            <label class="p-2 ">Select Tow Dates</label>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <div class="input-group date form_date" data-link-field="dtp_input1">
+                <label for="" class="btn btn-outline-secondary px-3 py-2"> From</label>
+                <input type="date" formControlName="date1" class="form-control btn btn-outline-secondary px-3 py-2" />
+              </div>
+            </div>
+
+              <div class="col-1"></div>
+              <div class="col-4">
+                <div class="input-group date form_date" data-link-field="dtp_input2">
+                  <label for="" class="btn btn-outline-secondary px-3 py-2">To</label>
+                  <input type="date" formControlName="date2" class="form-control btn btn-outline-secondary px-3 py-2" />
+                </div>
+              </div>
+          <div class="col-1"></div>
+          <div class="col">
+            <input type="submit" class="btn btn-outline-secondary px-3 py-2" value="Submit"  (click)="betweendateComp()" />
+          </div><div class="col  ">
+              <input type="submit" class="btn btn-secondary p-4 my-2  mx-5" value="{{h.getcompanys.length}}" />
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"
+    integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>

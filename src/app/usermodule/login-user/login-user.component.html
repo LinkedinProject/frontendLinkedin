@@ -1,0 +1,58 @@
+
+<app-h></app-h>
+<div class="content">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 order-md-2">
+                <img src="assets/as2/images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-md-6 contents">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="mb-4">
+                            <h3>Log In to <strong>Job Entry</strong></h3>
+                            
+                        </div>
+                        <form>
+                            <div class="form-group first">
+
+                                <input type="text" matInput class="form-control" [formControl]="email"
+                                    placeholder="Enter Your Email">
+
+                                <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+
+                                    Please enter a valid email address
+                                </mat-error>
+                                <!-- <mat-error *ngIf="email.hasError('required')">
+                                    Email is <strong>required</strong>
+                                </mat-error> -->
+
+                            </div>
+                            <div class="form-group last mb-4">
+                                <input type="password" class="form-control" [formControl]="pass"
+                                    placeholder="Enter Your Password">
+
+                            </div>
+
+                         
+
+                            <input type="submit"  [disabled]="!email.valid || !pass.valid "  value="Log In" class="btn text-white btn-block btn-primary" (click)="s()">
+                            <p (click)="goToRegisterPage()" style="cursor: pointer; 
+                                                        text-align: center;font-size: 1.7em;margin-top: 40px; ">
+                              Click Here To Create new account</p>
+                           
+
+
+
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<app-f></app-f>

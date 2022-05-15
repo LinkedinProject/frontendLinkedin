@@ -1,0 +1,182 @@
+<h1>
+</h1>
+
+<app-h></app-h>
+<div class="container-fluid py-5 bg-dark page-header mb-0" style="padding-top: 3rem !important;
+padding-bottom: 3rem !important;margin-bottom: 0rem !important;width: 100%;
+    padding-right: var(--bs-gutter-x, .75rem);
+    padding-left: var(--bs-gutter-x, .75rem);
+    margin-right: auto;
+    margin-left: auto;box-sizing: border-box;display: block;">
+    <div class="container my-5 pt-5 pb-4" style="    position: relative;
+    padding: 45px 0 45px 35px;
+    border-left: 15px solid var(--primary);padding-bottom: 1.5rem !important;padding-top: 3rem !important;margin-top: 3rem !important;
+    margin-bottom: 3rem !important;margin-right: auto;
+    margin-left: auto;">
+        <h1 class="display-3 text-white mb-3 animated slideInDown" style="color: #fff !important;margin-bottom: 1rem !important;
+    font-size: calc(1.525rem + 3.3vw);
+    font-weight: 800;
+    line-height: 1.2;animation-name: slideInDown;">Testimonial</h1>
+        <nav style=" box-sizing: border-box;">
+            <ol style="    display: flex;
+            flex-wrap: wrap;
+            padding: 0 0;
+            margin-bottom: 1rem;
+            list-style: none;text-transform: uppercase !important;margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;">
+                <li class="breadcrumb-item" style="    display: list-item;
+                text-align: -webkit-match-parent;list-style: none;"><a style="color: #00B074;
+    text-decoration: none;font-size: 1rem;" href="home">Home</a></li>
+                <li class="breadcrumb-item active" style="    display: list-item;
+                    text-align: -webkit-match-parent;list-style: none;color: #00B074;
+        text-decoration: none;font-size: 1rem;" aria-current="page">Jobs</li>
+                <li class="breadcrumb-item active" style="    display: list-item;
+                text-align: -webkit-match-parent;list-style: none;color: #e5ecea;
+    text-decoration: none;font-size: 1rem;" aria-current="page">Testimonial</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+
+
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<div class="container bootstrap snippets bootdey">
+
+    <section id="contact" class="gray-bg padding-top-bottom">
+        <div class="container bootstrap snippets bootdey">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <br> <br> <br> <br>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+                        <ol class="carousel-indicators">
+
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+
+
+
+                        </ol>
+
+                        <div class="carousel-inner" style="height: 700px;">
+
+                            <div class="carousel-item active">
+
+                                <img class="d-block w-100"  style="height: 380px;" src="../../assets/as2/images/yy (1).jpg" alt="First slide">
+
+                            </div>
+
+                            <div class="carousel-item">
+
+                                <img class="d-block w-100"  style="height: 380px;" src="../../assets/as2/images/yy (2).jpg"
+                                    alt="Second slide">
+
+
+
+
+                            </div>
+
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                data-slide="prev">
+
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+                                <span class="sr-only">Previous</span>
+
+                            </a>
+
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                data-slide="next">
+
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+                                <span class="sr-only">Next</span>
+
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="wow fadeInUp" data-wow-delay="0.5s">
+
+                    </div>
+<!-- *ngIf="h.stu.stu==null" -->
+                </div>
+                <form [formGroup]="teste"  id="Highlighted-form" class="col-sm-6 col-sm-offset-3"
+                    action="contact.php" method="post" novalidate="">
+
+                    <div class="form-group">
+
+                        <label class="control-label" for="contact-name">Name</label>
+                        <div class="controls">
+                            <input id="contact-name" formControlName="fname" name="contactName" placeholder="Your name"
+                                class="form-control requiredField Highlighted-label" data-new-placeholder="Your name"
+                                type="text" data-error-empty="Please enter your name">
+                            <i class="fa fa-user"></i>
+                        </div>
+
+                    </div><!-- End name input -->
+
+
+
+
+                    <div class="form-group">
+                        <label class="control-label" for="contact-mail">Email</label>
+                        <div class=" controls">
+                            <input id="contact-mail" formControlName="email" name="email" placeholder="Your email"
+                                class="form-control requiredField Highlighted-label" data-new-placeholder="Your email"
+                                type="email" data-error-empty="Please enter your email"
+                                data-error-invalid="Invalid email address">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                    </div><!-- End email input -->
+
+                    <div class="form-group">
+                        <label class="control-label" for="contact-message">Message</label>
+                        <div class="controls">
+                            <textarea id="contact-message" formControlName="message" name="comments"
+                                placeholder="Your message" class="form-control requiredField Highlighted-label"
+                                data-new-placeholder="Your message" rows="3"
+                                data-error-empty="Please enter your message"></textarea>
+                            <i class="fa fa-comment"></i>
+                        </div>
+
+                    </div><!-- End textarea -->
+                    <br>
+                    <h3>Are You Want To Publish Your Testemonial</h3>
+                    <mat-radio-group aria-label="Select an option" formControlName="stutus" >
+                        <mat-radio-button value="true">Yes</mat-radio-button>
+                        <mat-radio-button value="false">No</mat-radio-button>
+                    </mat-radio-group>
+
+
+
+              
+
+
+
+
+
+              
+                    <button (click)="f()" name="submit" mat-raised-button type="submit"
+                        class="btn btn-success btn-block" data-error-message="Error!" data-sending-message="Sending..."
+                        data-ok-message="Message Sent"><i class="fa fa-location-arrow"></i>Send Message</button>
+                    <input type="hidden" name="submitted" id="submitted" value="true">
+
+                    <p>
+                </form><!-- End Highlighted-form -->
+            </div>
+
+        </div>
+
+    </section>
+
+
+</div>
+
+<app-f></app-f>

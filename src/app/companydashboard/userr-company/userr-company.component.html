@@ -1,0 +1,486 @@
+<!--<section class="section about-section gray-bg" id="about">
+    <div class="container">
+        <div class="row align-items-center flex-row-reverse">
+            <div class="col-lg-6">
+                <div class="about-text go-to">
+                    <h3 class="dark-color">{{h.oneuser.fname}} &nbsp;{{h.oneuser.lname}}</h3>
+
+                    <div class="row about-list">
+                        <div class="col-md-6">
+                            <div class="media">
+                                <label>Birthday</label>
+                                <p>{{h.oneuser.birthdate}}</p>
+                            </div>
+
+                            <div class="media">
+                                <label>Address</label>
+                                <p>{{h.oneuser.address}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="media">
+                                <label>E-mail</label>
+                                <p>{{h.oneuser.email}}</p>
+                            </div>
+                            <div class="media">
+                                <label>Phone</label>
+                                <p>{{h.oneuser.phone}}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+<a href="./assets/img/{{h.oneuser.imageuser}}">View Cv </a>
+            <div class="col-lg-6">
+                <div class="about-avatar">
+                    <img src="./assets/img/{{h.oneuser.imageuser}}" title="" alt=""  style="width:300px  ; height: 350px;  border-radius: 20%;"  >
+                </div>
+            </div>
+        </div>
+        <div class="counter">
+            <div class="row">
+                <div class="col-6 col-lg-3">
+                    <div class="count-data text-center">
+                        <h6 class="count h2" data-to="500" data-speed="500">gpa</h6>
+                        <p class="m-0px font-w-600">{{h.userdue.gpa}}</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="count-data text-center">
+                        <h6 class="count h2" data-to="150" data-speed="150">150</h6>
+                        <p class="m-0px font-w-600">Project Completed</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="count-data text-center">
+                        <h6 class="count h2" data-to="850" data-speed="850">850</h6>
+                        <p class="m-0px font-w-600">Photo Capture</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="count-data text-center">
+                        <h6 class="count h2" data-to="190" data-speed="190">190</h6>
+                        <p class="m-0px font-w-600">Telephonic Talk</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
+  style="top: -100px;    transition: .5s;box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 18%) !important;
+position: sticky; height: 80px;   display: flex;flex-wrap: wrap;align-items: center;justify-content: space-between;z-index: 1020;">
+  <a style="color: rgba(0,0,0,0.9);text-align: center !important;    padding-top: 0 !important;
+    padding-bottom: 0 !important;padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;align-items: center !important;    display: flex !important;    margin-right: 1rem;
+    font-size: 1.25rem;
+    white-space: nowrap; height: 75px;" href="home"
+    class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+    <h1 class="m-0 text-primary" style="font-size: calc(1.375rem + 1.5vw);font-family: Inter,sans-serif;
+                font-weight: 700;
+                line-height: 1.2;">JobEntry</h1>
+  </a>
+
+  <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse" Style="display: none;">
+    <div class="navbar-nav ms-auto p-4 p-lg-0">
+      <a href="company/companyhome" style="font-size: 18px;text-transform: uppercase;outline: none;"
+        class="nav-item nav-link active">Home</a>
+      <a href="company/account" style="font-size: 18px;text-transform: uppercase;outline: none;"
+        class="nav-item nav-link">acount</a>
+      <a href="company/user-company" style="font-size: 18px;text-transform: uppercase;outline: none;"
+        class="nav-item nav-link">users</a>
+
+
+      <a href="company/report-comp" style="font-size: 18px;text-transform: uppercase;outline: none;"
+        class="nav-item nav-link">Reporet</a>
+      <a href="company/company-r" style="font-size: 18px;text-transform: uppercase;outline: none;"
+        class="nav-item nav-link">join</a>
+      <a href="" style="font-size: 18px;text-transform: uppercase;outline: none;" class="nav-item nav-link">LOGOUT</a>
+    </div>
+
+  </div>
+
+
+
+</nav>
+
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css"
+  integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+  integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-xl-4">
+      <div class="card-box text-center">
+        <img src="../../../assets/userimg/{{h.oneuser.imageuser}}" class="rounded-circle avatar-xl img-thumbnail"
+          alt="profile-image">
+
+        <h4 class="mb-0">{{h.oneuser.fname}} &nbsp;{{h.oneuser.lname}}</h4>
+
+
+        <div class="text-left mt-3">
+          <h4 class="font-13 text-uppercase">About Me :</h4>
+
+          <p class="text-muted mb-2 font-13"><strong>Full Name :</strong>
+            <span class="ml-2"> {{h.oneuser.fname}}
+              &nbsp;{{h.oneuser.lname}} </span>
+          </p>
+
+          <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span class="ml-2">
+              {{h.oneuser.phone}}</span></p>
+          <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span class="ml-2 ">{{h.oneuser.email}}</span></p>
+          <p class="text-muted mb-1 font-13"><strong>Gender :</strong> <span class="ml-2">{{h.oneuser.gender}}</span>
+          </p>
+          <p class="text-muted mb-1 font-13"><strong>Location :</strong> <span class="ml-2">{{h.oneuser.address}}</span>
+          </p>
+          <p class="text-muted mb-1 font-13"><strong>View CV :</strong> <span class="ml-2"><a
+                href="../../../assets/img/1f2d5b31-59b7-4cb4-8e03-cc26ea73dd26-Web Application Programming Interface (API) - Chapter 02 - 2 (3).pdf"><i
+                  class="mdi mdi-file-pdf-box fs-5"></i></a>
+            </span>
+
+        </div>
+
+        <ul class="social-list list-inline mt-3 mb-0">
+          <li class="list-inline-item">
+            <a href="javascript: void(0);" class="social-list-item border-purple text-purple"><i
+                class="fab fa-facebook"></i></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="javascript: void(0);" class="social-list-item border-danger text-danger"><i
+                class="fab fa-google"></i></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="javascript: void(0);" class="social-list-item border-info text-info"><i
+                class="fab fa-twitter"></i></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i
+                class="fab fa-github"></i></a>
+          </li>
+        </ul>
+      </div> <!-- end card-box -->
+
+
+    </div> <!-- end col-->
+
+    <div class="col-lg-8 col-xl-8">
+      <div class="card-box">
+        <ul class="nav nav-pills navtab-bg">
+          <li class="nav-item">
+            <a href="#about-me" data-toggle="tab" aria-expanded="true" class="nav-link ml-0 active">
+              <i class="mdi mdi-face-profile mr-1"></i>About Me
+            </a>
+          </li>
+          <button (click)="email()" *ngIf="compid" class="btn btn-info ml-0 "> <i
+              class="mdi mdi-email-newsletter mr-1"></i>send email</button>
+        </ul>
+
+        <div class="tab-content">
+
+          <div class="tab-pane show active" id="about-me">
+
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-briefcase mr-1"></i>
+              Experience</h5>
+
+            <ul class="list-unstyled timeline-sm">
+              <li class="timeline-sm-item" *ngFor="let i of h.exp">
+                <span class="timeline-sm-date">
+                  {{i.datefrom | date: 'MM/yy'}} - {{i.dateto | date:
+                  'MM/yy'}}</span>
+                <h5 class="mt-0 mb-1">{{i.jobtitle | uppercase}}</h5>
+                <p>{{i.companyname | titlecase}}</p>
+                <p class="text-muted mt-2">{{i.describtion}}</p>
+
+              </li>
+
+            </ul>
+            <!-- ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, -->
+
+
+            <div class="tab-pane show active" id="about-me">
+              <h5 class="mb-4 text-uppercase"><i class="mdi mdi-briefcase-variant fs-5  mr-1"></i>
+                Projects</h5>
+
+              <ul class="list-unstyled timeline-sm">
+                <li class="timeline-sm-item"></li>
+                <li class="timeline-sm-item" *ngFor="let i of h.userProjects">
+                  <span class="timeline-sm-date">{{i.startdate | date: 'MM/yy'}} - {{i.enddate | date:
+                    'MM/yy'}}</span>
+
+                  <h3> <b><a target="blank" href="{{i.prolink}}"> {{i.proTitle | uppercase}} </a></b></h3>
+                  <a class="btn btn-outline-success" target="blank" href="{{i.prolink}}"> Show
+
+                    Project <i class="mdi mdi-arrow-top-right"></i></a>
+                  <p class="text-muted mt-2">
+                    {{i.proDescription}}
+                  </p>
+
+                </li>
+
+              </ul>
+            </div>
+
+
+            <div class="tab-pane show active" id="about-me">
+              <h5 class="mb-4 text-uppercase"><i class="mdi mdi-email-newsletter fs-5  mr-1"></i>
+                Recommendations [{{recommendLetter}}]</h5>
+
+              <div class="counter m-5  ">
+
+
+                <div class="row my-5">
+                  <div class="col-6">
+                    <div class="btn-group d-block m-auto" role="group" aria-label="Basic outlined example">
+                      <button type="button" #btn1 class="btn btn-outline-secondary"
+                        (click)="GetRecommenndationResever() ; btn1.click() ">
+                        Received
+                      </button>
+                      <button type="button" #btn2 class="btn btn-outline-secondary"
+                        (click)="GetRecommenndationSender() ">
+                        Given
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-4" *ngIf="userLogid">
+                    <button type="button" class="btn btn-outline-secondary" (click)="recToggle()">
+                      Send Recommend Latter
+                    </button>
+                  </div>
+                </div>
+                <div class="container">
+                  <div class="row">
+
+                    <form [formGroup]="createform" *ngIf="t == 1">
+
+
+                      <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+                          <div class="form-group">
+
+                            <textarea style="width: 400px; height: 100px; " placeholder="Recommend Latter"
+                              class="form-control" formControlName="recommendLeter">
+                                        </textarea><br>
+                            <div class="actions clearfix" style="width: 300px; margin-left: 200px">
+                              <button class="btn btn-rounded btn-outline-success text-dark w-50" type="submit"
+                                (click)="sendRecommend()">
+                                create
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </form>
+
+                  </div>
+
+
+
+
+                  <p *ngIf="recommendLetter == 0">
+
+                    {{msg}} </p>
+
+
+                  <div class="row" style="height: 250px ; overflow-y: auto; ">
+                    <div class="col-md-6 item" *ngFor="let item of h.recommendations">
+
+
+
+                      <div class="item-in">
+                        <div class="row">
+                          <div class="col">
+
+                            <img class="rounded-circle z-depth-2 userimg1" width="50" height="50"
+                              src="../../../assets/userimg/{{item.userImg}}" data-holder-rendered="true">
+                          </div>
+                          <div class="col">
+                            <h4> {{item.userName | uppercase}}</h4>
+                          </div>
+                        </div>
+                        <div class="seperator"></div>
+                        <p>
+                          {{item.recommendLeter}}
+                        </p>
+                        <div class="seperator"></div>
+
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+
+
+
+
+          </div>
+
+
+
+
+
+          <div class="tab-pane" id="settings">
+            <form>
+              <h5 class="mb-3 text-uppercase bg-light p-2"><i class="mdi mdi-account-circle mr-1"></i> Personal Info
+              </h5>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="Enter first name">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Enter last name">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="userbio">Bio</label>
+                    <textarea class="form-control" id="userbio" rows="4" placeholder="Write something..."></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="useremail">Email Address</label>
+                    <input type="email" class="form-control" id="useremail" placeholder="Enter email">
+                    <span class="form-text text-muted"><small>If you want to change email please <a
+                          href="javascript: void(0);">click</a> here.</small></span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="userpassword">Password</label>
+                    <input type="password" class="form-control" id="userpassword" placeholder="Enter password">
+                    <span class="form-text text-muted"><small>If you want to change password please <a
+                          href="javascript: void(0);">click</a> here.</small></span>
+                  </div>
+                </div>
+              </div>
+
+              <h5 class="mb-3 text-uppercase bg-light p-2"><i class="mdi mdi-office-building mr-1"></i> Company Info
+              </h5>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="companyname">Company Name</label>
+                    <input type="text" class="form-control" id="companyname" placeholder="Enter company name">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="cwebsite">Website</label>
+                    <input type="text" class="form-control" id="cwebsite" placeholder="Enter website url">
+                  </div>
+                </div>
+              </div>
+
+              <h5 class="mb-3 text-uppercase bg-light p-2"><i class="mdi mdi-earth mr-1"></i> Social</h5>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="social-fb">Facebook</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fab fa-facebook-square"></i></span>
+                      </div>
+                      <input type="text" class="form-control" id="social-fb" placeholder="Url">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="social-tw">Twitter</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fab fa-twitter"></i></span>
+                      </div>
+                      <input type="text" class="form-control" id="social-tw" placeholder="Username">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="social-insta">Instagram</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fab fa-instagram"></i></span>
+                      </div>
+                      <input type="text" class="form-control" id="social-insta" placeholder="Url">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="social-lin">Linkedin</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fab fa-linkedin"></i></span>
+                      </div>
+                      <input type="text" class="form-control" id="social-lin" placeholder="Url">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="social-sky">Skype</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fab fa-skype"></i></span>
+                      </div>
+                      <input type="text" class="form-control" id="social-sky" placeholder="@username">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="social-gh">Github</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fab fa-github"></i></span>
+                      </div>
+                      <input type="text" class="form-control" id="social-gh" placeholder="Username">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-right">
+                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i
+                    class="mdi mdi-content-save"></i> Save</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<app-f></app-f>

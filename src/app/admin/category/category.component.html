@@ -1,0 +1,63 @@
+<link href="http://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
+
+<body class="flex">
+ <app-nanav-dashboard-admin></app-nanav-dashboard-admin>>
+
+  <section class="section__main">
+  
+  <div class="bg-primary flex flex-justify-between flex-align-center banner">
+    <div>
+      <h1 class="text-4xl text-white mb-2">Assign at</h1>
+      <h1 class="text-4xl text-white mb-4">Manage category </h1>
+      <div class="banner__cta">
+  
+  
+        <button class="button text-black py-4 px-8" style="color: rgb(30, 114, 142);" (click)="y()"> create</button>
+      </div>
+    </div>
+    <div class="banner__img">
+      <img src="https://i.ibb.co/vBkwrv5/banner.png" alt="banner">
+    </div>
+  </div>
+
+
+    <div class="charts">
+
+
+      <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+        integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous" />
+
+
+      <div class="row m-5">
+        <div class="col-3   py-2 justify-content-center" *ngFor="let x of h.data">
+
+          <div class="m-2 p-2 text-center" style="border-radius: 30px; background-color:  lightblue ;">
+            <h3>{{x.categoryName}}</h3>
+            <a (click)="opendialog(x.categoryId,x.categoryName)" class="text-center m-5"> Update</a>
+          </div>
+
+        </div>
+
+
+
+
+      </div>
+    </div>
+
+
+
+
+
+
+    <ng-template #callupdate>
+      <form [formGroup]="update">
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <input type="text" matInput formControlName="categoryName" placeholder="Ex. pat@example.com"
+            [(ngModel)]="obj.categoryName">
+
+        </mat-form-field>
+        <button (click)="updatecat()">submit</button>
+      </form>
+    </ng-template>

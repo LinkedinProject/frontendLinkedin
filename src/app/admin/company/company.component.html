@@ -1,0 +1,121 @@
+<link href="http://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet" />
+
+<body class="flex">
+  <app-nanav-dashboard-admin></app-nanav-dashboard-admin>
+
+  <section class="section__main">
+<div class="bg-primary flex flex-justify-between flex-align-center banner">
+  <div>
+    <h1 class="text-4xl text-white mb-2">All Company </h1>
+    <h1 class="text-4xl text-white mb-4">Registered </h1>
+   
+  </div>
+  <div class="banner__img">
+    <img src="https://i.ibb.co/vBkwrv5/banner.png" alt="banner">
+  </div>
+</div>
+
+    <div class="charts">
+      <div class="flex flex-justify-between flex-align-center mb-4">
+
+
+        <div class="container bootdey">
+
+          <h1 class="text-secondary my-5 text-center"> </h1>
+
+          <div class="row h-75 mt-5 p-2">
+
+            <form [formGroup]="dateForm">
+              <div class="row">
+                <h2>Search Between Dates For Job Applicants</h2>
+                <div class="col-3">
+                  <div class="input-group date form_date" data-link-field="dtp_input1">
+                    <label for="" class="btn btn-outline-secondary px-3 py-1.5"> From</label>
+                    <input type="date" formControlName="date1"
+                      class="form-control btn btn-outline-secondary px-1 py-2" />
+                  </div>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-3">
+                  <div class="input-group date form_date" data-link-field="dtp_input2">
+                    <label for="" class="btn btn-outline-secondary px-3 py-1.5">To</label>
+                    <input type="date" formControlName="date2"
+                      class="form-control btn btn-outline-secondary px-1 py-2" />
+                  </div>
+                </div>
+                <div class="col-1"></div>
+                <div class="col">
+                  <input type="submit" class="btn btn-outline-secondary px-3 py-1.5" value="Submit"
+                    (click)="betweendates()" />
+                </div>
+              </div>
+            </form>
+          </div>
+
+
+
+
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+            integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+          <div class="container mt-3 mb-4">
+
+            <div class="user-dashboard-info-box table-responsive mb-0 bg-white p-4 shadow ">
+              <table class="table table-hover table-striped table-bordered" cellspacing="0" datatable [dtOptions]="h.dtOptions"
+                [dtTrigger]="h.dtTrigger">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Company Name/Link</th>
+                    <th class="text-center">Location</th>
+                    <th>Specialties</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let x of h.getcompanys">
+                    <td class="title">
+                      <div  >
+                        <img class=" img-thumbnail rounded-circle" src="../../../assets/companyimg/{{x.logo}}" alt="">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="candidate-list-details">
+                        <div class="candidate-list-info">
+                          <div class="candidate-list-title">
+                            <h3 class="mb-0"><a href="{{x.website_url}}">{{ x.compname | uppercase }}</a></h3>
+                          </div>
+                          <div class=" candidate-list-option">
+                            <ul class="list-unstyled">
+                              <li><i class="fas fa-calendar pr-1"></i>{{ x.registereddate | date :
+                                'yyyy-mm-dd' }}
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+
+                    <td class="candidate-list-favourite-time text-center">
+                      <a class="candidate-list-favourite order-2 text-danger" href="#"><i
+                          class="fas fa-map-marker-alt pr-1"></i></a>
+                      <span class="candidate-list-time order-1">{{ x.location }}</span>
+                    </td>
+                    <td class="candidate-list-favourite-time  lh-base">
+                      <span class="candidate-list-time order-1  overflow-auto h-75">{{ x.specialties }}
+
+                      </span>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+</body>

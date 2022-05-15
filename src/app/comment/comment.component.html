@@ -1,0 +1,154 @@
+<!-- 
+<mat-dialog-content class="mat-typography">
+<div class="container">
+    <div class="row bootstrap snippets bootdeys">
+        <div class="col-md-8 col-sm-12">
+            <div class="comment-wrapper">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Comment panel
+                    </div>
+                    <br>
+                   
+                    <div class="panel-body"> 
+                        <form  [formGroup]="write" >
+                        <textarea formControlName="comments"  style="    border-radius: 20px;
+" class="form-control" placeholder="write a comment..." rows="3" ></textarea>
+                        <button mat-dialog-close="true" (click)="wr()"  style="border-radius: 8%;" type="button" class="btn btn-info pull-right">Share</button>
+                        </form>
+                        <div class="clearfix"></div>
+                        <hr>
+                        <ul class="media-list" *ngFor="let x of h.comments" >
+                            <li  class="media"  >
+                                <div  [hidden]="x.userid!=h.oneuser.userid" class="dropdown">
+                                    <button class="btn p-0" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-more-horizontal icon-lg pb-3px">
+                                            <circle cx="12" cy="12" r="1"></circle>
+                                            <circle cx="19" cy="12" r="1"></circle>
+                                            <circle cx="5" cy="12" r="1"></circle>
+                                        </svg>
+                                    </button>
+                                    <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-meh icon-sm mr-2">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <line x1="8" y1="15" x2="16" y2="15"></line>
+                                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                                            </svg> <span class="">Unfollow</span></a>
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-corner-right-up icon-sm mr-2">
+                                                <polyline points="10 9 15 4 20 9"></polyline>
+                                                <path d="M4 20h7a4 4 0 0 0 4-4V4"></path>
+                                            </svg> <span class="">Go to post</span></a>
+                                      
+                                    </div>
+                                </div>
+                                <a href="#" class="pull-left">
+                                    <img src="../../assets/userimg/{{x.imageuser}}" alt=""class="img-xs rounded-circle">
+                                </a>
+                                <div class="media-body">
+                                    <span class="text-muted pull-right">
+                                        <small class="text-muted">30 min ago</small>
+                                    </span>
+                                    <strong class="text-success">@MartinoMont</strong>
+                                    <p>
+                                        {{x.comments}}
+                                    </p>
+                                  
+                                </div>
+                          
+                            </li>
+                          
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</mat-dialog-content> -->
+
+<mat-dialog-content>
+   
+<form [formGroup]="write" *ngIf="id" >
+   
+<div class="flex justify-center items-center min-h-screen bg-[#ccc]">
+    <div class="h-80 px-7 w-[700px] rounded-[12px] bg-white p-4">
+       <textarea  formControlName="comments" style="width:400px"
+            class="h-40 px-3 text-sm py-1 mt-5 outline-none border-pink-300 w-full resize-none border rounded-lg placeholder:text-sm"
+            placeholder="Add your comments here"></textarea>
+        <div class="flex justify-between mt-2"> <button  (click)="wr()"
+                class="h-12 w-[150px] btn btn-primary  text-sm  rounded-lg transition-all cursor-pointer hover:bg-blue-600" >Submit
+                comment</button>
+           
+        </div>
+    </div>
+</div>
+</form>
+
+
+
+    <div  class="container-fluid">
+        <div >
+            <div class="card">
+              
+                <div class="comment-widgets">
+                    <!-- Comment Row -->
+                    <div class="d-flex flex-row comment-row m-t-0" style="width:400px" *ngFor="let x of h.comments" >
+                   
+                        <div [hidden]="x.userid!=h.oneuser.userid" class="dropdown ">
+                            <button class="btn p-0" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="feather feather-more-horizontal icon-lg pb-3px">
+                                    <circle cx="12" cy="12" r="1"></circle>
+                                    <circle cx="19" cy="12" r="1"></circle>
+                                    <circle cx="5" cy="12" r="1"></circle>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <a class="dropdown-item d-flex align-items-center">
+                                    <svg (click)="deletes(x.com_id)"xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="feather feather-meh icon-sm mr-2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="8" y1="15" x2="16" y2="15"></line>
+                                        <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                        <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                                    </svg> <span   class="">Delete</span></a>
+                                <a (click)="edit(x.com_id)"class="dropdown-item d-flex align-items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="feather feather-corner-right-up icon-sm mr-2">
+                                        <polyline points="10 9 15 4 20 9"></polyline>
+                                        <path d="M4 20h7a4 4 0 0 0 4-4V4"></path>
+                                    </svg> <span  class="">Edit Comment</span></a>
+                        
+                            </div>
+                        </div>
+                        <div class="p-2"><img src="../../assets/userimg/{{x.imageuser}}" alt="user" width="40" height="40"
+                                class="rounded-circle"></div>
+                        <div class="comment-text w-100">
+                            <h6 class="font-medium">{{x.fname}}&nbsp;{{x.lname}}</h6> <span class="m-b-15 d-block">{{x.comments}} </span>
+                
+                            <div class="comment-footer"> <span class="text-muted float-right">{{x.dates|date :'shortTime'}}</span> </div>
+                        </div>
+                    </div> <!-- Comment Row -->
+                
+                       
+                      
+                </div> <!-- Card -->
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>

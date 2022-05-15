@@ -1,0 +1,21 @@
+
+/* Webpixels CSS */
+/* Utility and component-centric Design System based on Bootstrap for fast, responsive UI development */
+/* URL: https://github.com/webpixels/css */
+
+@import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
+
+/* Bootstrap Icons */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css");
+
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700");
+/* @import url("../../assets/rep-ass/css/nucleo-icons.css");
+@import url("../../assets/rep-ass/css/nucleo-svg.css"); */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Round");
+/* @import url("../../assets/rep-ass/css/material-dashboard.css"); */
+@import url("https://demo.dashboardpack.com/architectui-html-free/main.css");

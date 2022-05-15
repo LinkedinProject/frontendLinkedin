@@ -1,0 +1,41 @@
+.page-header {
+    background: linear-gradient(rgba(43, 57, 64, .5), rgba(43, 57, 64, .5)), url(../../assets/img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+/* <select> styles */
+.w {
+    /* Reset */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    width: 10em;
+    height: 3em;
+    padding: 0 1em 0 1em;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, rgba(0, 176, 116, 0.5) 3em, rgba(0, 176, 116, 0.7) 3em);
+    color: white;
+    margin: 0 1em 0 1em;
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    /* <option> colors */
+    /* Remove focus outline */
+    /* Remove IE arrow */
+}
+
+select option {
+    color: gray;
+    background-color: #ebe4e9;
+}
+
+select:focus {
+    outline: none;
+}
+
+select::-ms-expand {
+    display: none;
+}

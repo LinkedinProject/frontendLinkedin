@@ -1,0 +1,100 @@
+enum can take type like==> enum x:int
+
+string buider can i dd or delete in exist string by string builder
+StringBuilder sb = new StringBuilder("Hello World!", 50 <max capacity>);
+sb.append("ss");
+Use the Insert() method inserts a string at the specified index in the StringBuilder object.
+
+
+
+ var student = new { Id = Console.ReadLine(), FirstName = "James", LastName = "Bond" };====>anynemouse block 
+            Console.WriteLine(student.Id);
+
+
+
+dynamic MyDynamicVar = 100;
+    Console.WriteLine("Value: {0}, Type: {1}", MyDynamicVar, MyDynamicVar.GetType());
+    MyDynamicVar = "Hello World!!";
+    Console.WriteLine("Value: {0}, Type: {1}", MyDynamicVar, MyDynamicVar.GetType());
+    MyDynamicVar = true;
+    Console.WriteLine("Value: {0}, Type: {1}", MyDynamicVar, MyDynamicVar.GetType());
+    MyDynamicVar = DateTime.Now;
+    Console.WriteLine("Value: {0}, Type: {1}", MyDynamicVar, MyDynamicVar.GetType());
+
+
+
+goto can i go to label i already define it
+
+
+
+
+    foreach (int i in arr)  
+        {  
+            Console.WriteLine(i);  
+
+
+
+
+params مع الاري لما بدي ابعت عدد من الارقام عشان تخزنها الاري و ما اكون محدد
+
+
+
+
+ static void arra(params object[] x)
+arra(1, 2, 3, 4, 3, 4,"ery","yjh");
+بقدر ابعت عناصر لل اري من جيع الانواع لماا اط النوع اوبجكت
+
+
+static mean the variable or method not follow the class
+
+الفنكشن الستاتيك بقدر اوصله عن طريق اسم اي كلاس دوت اسم الفنكشن
+
+اي اشي ستاتيك بقدر اوصله بكل مكان بالبرنامج
+
+properity بقدر اعدل ع قيمه الVALUE
+بقدر اخلي الprarity ستايك 
+
+base keyword if derived class nd base calss have same name of feild  or method
+مثلا لو استدعيت ميثود داخل ميثودوالهم نفس الاسم بدون كلمه base بصسير عندي اوفر فلو
+
+
+sealed method cannot i override it   
+
+
+
+
+
+
+
+
+char[] ch = { 'c', 's', 'h', 'a', 'r', 'p' };  
+        string s2 = new string(ch);  
+         
+        Console.WriteLine(s1);  
+        Console.WriteLine(s2);  
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://css-tricks.com/
+
+
+
+https://codepen.io/enxaneta/full/adLPwv
+
+
+
+
+https://codepen.io/trending
+
+
+https://tahaluf-my.sharepoint.com/:v:/g/personal/r_alquran_ext_tahaluf_ae/EQBAaQpAlJ5LlfEW_CtZw0UB0F1RTm-2mrmSEYUznYlcUw

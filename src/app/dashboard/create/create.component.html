@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>category</h2>
+<mat-dialog-content class="mat-typography">
+    <form class="example-form" [formGroup]="createform" >
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>enter catogaryname</mat-label>
+            <input type="text" matInput formControlName="categoryName"  placeholder="enter cat name">
+           
+        </mat-form-field>
+        
+               
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="cre()">create</button>
+</mat-dialog-actions>

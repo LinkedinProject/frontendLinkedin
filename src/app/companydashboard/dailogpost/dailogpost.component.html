@@ -1,0 +1,212 @@
+<!-- <mat-dialog-content class="mat-typography">
+  <form [formGroup]="createform">
+
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+        <div>
+          <div>
+            <a href="#" class="login-logo" style="font-size: 30px; margin-top: 500px;">
+              Enter Post Job </a>
+            <div class="row gutters">
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                  <mat-form-field class="example-full-width" ppearance="fill">
+                    <input type="text" placeholder="job_title" class="form-control" formControlName="job_title">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <input type="number" placeholder="salary" class="form-control resume" formControlName="salary" />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <input type="text" placeholder="location" class="form-control resume" formControlName="location" />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <input type="text" placeholder="edu_level" class="form-control resume"
+                      formControlName="edu_level" />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <input type="date" placeholder="end_date" class="form-control resume" formControlName="end_date" />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+
+
+
+
+
+
+
+
+
+
+                <mat-form-field appearance="fill" style="border-style: soild;">
+                  <div class="form-group">
+                    <mat-label>Select Job category</mat-label>
+                    <select matNativeControl id="mySelectId" formControlName="catid">
+                      <option value="" disabled selected></option>
+                      <option value="121">HR</option>
+                      <option value="122">IT Jobs</option>
+                      <option value="123">Marketing</option>
+                      <option value="124">Engeneering</option>
+                                            <option value="125">sales</option>
+                                                                  <option value="126">others</option>
+
+
+                    </select>
+                  </div>
+                </mat-form-field>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <mat-form-field appearance="fill">
+                  <div class="form-group">
+                    <mat-label style="border: 1px;">Select Job Type</mat-label>
+                    <select matNativeControl id="mySelectId" formControlName="job_ype">
+                      <option value="" disabled selected></option>
+                      <option value="1">Full Time</option>
+                      <option value="0">Part Time</option>
+                    </select>
+                  </div>
+                </mat-form-field>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <mat-form-field appearance="fill">
+                  <div class="form-group">
+                    <label>
+                      Select Job onsite/remote</label>
+                    <select matNativeControl id="mySelectId" formControlName="onsite_remote">
+                      <option value="" disabled selected></option>
+                      <option value="1">remote</option>
+                      <option value="2">onsite</option>
+                      <option value="3">hybrid</option>
+                    </select>
+                  </div>
+                </mat-form-field>
+              </div>
+              <div class="col-xl-12 col-lg-12 col-md-10 col-12 m-auto">
+
+
+                <textarea class="form-control" rows="5" formControlName="description"
+                  placeholder="Description"></textarea>
+
+
+              </div>
+            </div>
+            <div class="actions clearfix" style="  margin-top: 20px;">
+              <button class="btn btn-rounded btn-success text-dark w-50" type="submit" [mat-dialog-close]="true"
+                cdkFocusInitial (click)="cre()">
+                create
+              </button>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+  </form>
+ -->
+
+
+
+<!-- ------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------------- -->
+<mat-dialog-content>
+  <h1 mat-dialog-title>Create Job</h1>
+
+  <div class="testbox">
+    <form [formGroup]="createform">
+
+      <br />
+
+      <div class="colums">
+        <div class="item">
+          <label for="name">Job Title<span>*</span></label>
+          <!-- <input id="name" type="text" name="name" required /> -->
+          <input type="text" placeholder="job title" formControlName="job_title">
+
+        </div>
+        <div class="item">
+          <label for="salary">Salary<span>*</span></label>
+          <input type="number" placeholder="salary" formControlName="salary" />
+
+        </div>
+        <div class="item">
+          <label for="location">Location<span>*</span></label>
+          <!-- <input id="phone" type="tel" name="phone" required /> -->
+          <input type="text" placeholder="location" formControlName="location" />
+
+        </div>
+        <div class="item">
+          <label for="street">Education Level<span>*</span></label>
+          <select formControlName="edu_level">
+            <option value="none" selected disabled hidden>edu_level</option>
+            <option value="PHD">PHD</option>
+            <option value="Master">Master</option>
+            <option value="bachelor">bachelor</option>
+          </select>
+        </div>
+
+
+        <div class="item">
+          <label for="state">Deadline<span>*</span></label>
+          <input type="date" placeholder="end_date" formControlName="end_date" />
+
+          <!-- <input id="state" type="text" name="state" required /> -->
+        </div>
+        <div class="item">
+          <label for="zip"> Job category<span>*</span></label>
+          <select formControlName="catid">
+            <option value="category" disabled selected></option>
+            <option *ngFor="let c of h.data" value="{{c.categoryId}}">{{c.categoryName}}</option>
+          </select>
+        </div>
+
+        <div class="item">
+          <p> Job Type</p>
+          <select formControlName="job_ype">
+            <option value="" disabled selected></option>
+            <option value="1">Full Time</option>
+            <option value="0">Part Time</option>
+          </select>
+        </div>
+        <div class="item">
+          <p> Onsite/Remote</p>
+          <select formControlName="onsite_remote">
+            <option value="" disabled selected></option>
+            <option value="0">remote</option>
+            <option value="1">onsite</option>
+            <option value="2">hybrid</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="item">
+        <label for="visit">Job Description</label>
+        <textarea rows="7" formControlName="description" placeholder="Description"></textarea>
+      </div>
+
+      <div class="btn-block">
+        <button type="submit" (click)="cre()">Submit</button>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>

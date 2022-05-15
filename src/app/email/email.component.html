@@ -1,0 +1,84 @@
+<!-- <h1 mat-dialog-title>Dialog with elements</h1>
+<div mat-dialog-content>
+
+<form [formGroup]="emailform">
+
+ from <input type="text"    formControlName="From" [(ngModel)]="h.compinfo.email" ><br>
+password <input type="text" formControlName="password" [(ngModel)]="h.compinfo.pass"><br>
+
+to <input type="text"   formControlName="to" [(ngModel)]="h.oneuser.email"><br>
+
+subject <input type="text"   formControlName="subject" > <br>
+message <input type="text"   formControlName="message" ><br>
+
+</form>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+        <button  (click)="send()" mat-button mat-dialog-close  >send</button>
+
+</div>
+ -->
+<div mat-dialog-content>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<br>
+<br>
+<div class="container bootdey">
+    <div class="email-app">
+
+        <main>
+            <p class="text-center">New Message</p>
+            <form [formGroup]="emailform">
+                <div class="form-row mb-3">
+                    <label for="to" class="col-2 col-sm-2 col-form-label">From:</label>
+                    <div class="col-10 col-sm-11">
+                        <input type="text" class="form-control"  formControlName="From" [(ngModel)]="h.compinfo.email">
+                    </div>
+                </div>
+                <div class="form-row mb-3">
+                    <label for="to" class="col-2 col-sm-2 col-form-label">password:</label>
+                    <div class="col-10 col-sm-11">
+                        <input type="password" class="form-control"  formControlName="password" [(ngModel)]="h.compinfo.pass">
+                    </div>
+                </div>
+                <div class="form-row mb-3">
+                    <label for="to" class="col-2 col-sm-2 col-form-label">To:</label>
+                    <div class="col-10 col-sm-11">
+                        <input type="text" class="form-control"  formControlName="to"  [(ngModel)]="h.oneuser.email" >
+                    </div>
+                </div>
+
+<div class="form-row mb-3">
+    <label for="to" class="col-2 col-sm-2 col-form-label">Subject:</label>
+    <div class="col-10 col-sm-11">
+        <input type="text" class="form-control" id="to" formControlName="subject">
+    </div>
+</div>
+
+           
+            <div class="row">
+                <div class="col-sm-11 ml-auto">
+                 
+                    <div class="form-group mt-4">
+                                            <label for="to" class="col-2 col-sm-2 col-form-label">Message:</label>
+
+                        <input type="text" class="form-control" id="message" name="body" rows="5"
+                            placeholder="Write Your Message Here"  formControlName="message" >
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success" mat-dialog-close="true" (click)="send()">Send</button>
+                      
+                        <button mat-dialog-close="true" type="submit" class="btn btn-danger">Discard</button>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </main>
+    </div>
+</div>
+
+</div> 
+

@@ -1,0 +1,177 @@
+
+<app-h></app-h>
+<div class="container-fluid py-5 bg-dark page-header mb-0" style="padding-top: 3rem !important;
+padding-bottom: 3rem !important;margin-bottom: 0rem !important;width: 100%;
+    padding-right: var(--bs-gutter-x, .75rem);
+    padding-left: var(--bs-gutter-x, .75rem);
+    margin-right: auto;
+    margin-left: auto;box-sizing: border-box;display: block;">
+    <div class="container my-5 pt-5 pb-4" style="    position: relative;
+    padding: 45px 0 45px 35px;
+    border-left: 15px solid var(--primary);padding-bottom: 1.5rem !important;padding-top: 3rem !important;margin-top: 3rem !important;
+    margin-bottom: 3rem !important;margin-right: auto;
+    margin-left: auto;">
+        <h1 class="display-3 text-white mb-3 animated slideInDown"  style="color: #fff !important;margin-bottom: 1rem !important;
+    font-size: calc(1.525rem + 3.3vw);
+    font-weight: 800;
+    line-height: 1.2;animation-name: slideInDown;">Job List</h1>
+        <nav   style=" box-sizing: border-box;" >
+            <ol style="    display: flex;
+            flex-wrap: wrap;
+            padding: 0 0;
+            margin-bottom: 1rem;
+            list-style: none;text-transform: uppercase !important;margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;">
+                <li class="breadcrumb-item" style="    display: list-item;
+                text-align: -webkit-match-parent;list-style: none;"><a style="color: #00B074;
+    text-decoration: none;font-size: 1rem;" href="home">Home</a></li>
+                    <li class="breadcrumb-item active" style="    display: list-item;
+                    text-align: -webkit-match-parent;list-style: none;color: #00B074;
+        text-decoration: none;font-size: 1rem;" aria-current="page">Jobs Catesgory</li>
+                <li class="breadcrumb-item active" style="    display: list-item;
+                text-align: -webkit-match-parent;list-style: none;color: #e5ecea;
+    text-decoration: none;font-size: 1rem;" aria-current="page">Job List</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+
+<div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
+  <div class="container">
+      <div class="row g-2">
+          <div class="col-md-10">
+              <div class="row g-2">
+                <form [formGroup]="x2">
+                  <div class="col-md-4">
+                      <input type="text" style="width: 1000px; height: 50px;" class="form-control border-0" formControlName="job_Title" placeholder="Keyword" />
+                  </div>
+                </form>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <button class="btn btn-dark border-0 w-100" style="width: 1000px; height: 50px;" (click)="searchfunction()">Search</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!--<form [formGroup]="x2">
+  <div class="col-md-4">
+    <input type="text" class="form-control border-0" formControlName="job_Title" placeholder="Keyword" />
+  </div>
+</form>
+<div class="col-md-2">
+  <button (click)="searchfunction()" class="btn btn-dark border-0 w-100">
+    Search1
+  </button>
+</div>-->
+
+
+<div class="container-xxl py-5">
+  <div class="container">
+    <h1
+      class="text-center mb-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+      style="    visibility: visible;
+    animation-delay: 0.1s;
+    animation-name: fadeInUp;text-align: center !important;font-size: calc(1.375rem + 1.5vw);    font-family: 'Inter',sans-serif;
+    font-weight: 700;
+    line-height: 1.2;"
+    >
+      Job Listing
+    </h1>
+    <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
+      <ul
+        class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5"
+      >
+      
+        <li class="nav-item" (click)="h.getjobbyid(this.x)">
+          <select >
+              <option (click)="h.getjobbyid(this.x)" selected value="0">All Featured</option>
+          </select>
+          
+          
+        </li>
+
+        <li class="nav-item">
+          <select (change)="getJobType($event)">
+            <option selected value="-1">Job Type</option>
+            <option value="1">Full Time</option>
+            <option value="0">Part Time</option>
+          </select>
+        </li>
+
+        <li class="nav-item">
+          <select (change)="getJobOnsite_Remote($event)">
+            <option selected value="0">Onsite/Remote</option>
+            <option value="1">Onsite</option>
+            <option value="0">Remote</option>
+            <option value="2">Hybrid</option>
+          </select>
+        </li>
+      </ul>
+      <div class="job-item p-4 mb-4" *ngFor="let x of h.arr4"   style="border: 1px solid transparent;
+      border-radius: 2px;visibility: visible; box-shadow: 0 0 45px rgb(0 0 0 / 8%);transition: .5s;padding: 1.5rem !important; margin-bottom: 1.5rem !important;">
+        <div class="row g-4" style="    display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(var(--bs-gutter-y) * -1);
+        margin-right: calc(var(--bs-gutter-x) / -2);
+        margin-left: calc(var(--bs-gutter-x) / -2);">
+          <div class="col-sm-12 col-md-8 d-flex align-items-center" style="    align-items: center !important;display: flex !important;    flex: 0 0 auto;
+          width: 66.66667%;max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);">
+            <img
+              class="flex-shrink-0 img-fluid border rounded"
+              src="../../assets/companyimg/{{x.logo}}"
+              alt=""
+              style="width: 80px; height: 80px"
+            />
+                       
+
+            <div class="text-start ps-4" style="text-align: left !important;padding-left: 1.5rem !important;">
+              <h2 style="font-weight: bold; font-style: italic; " class="mb-3">{{x.company|uppercase}} ( <span
+                  style="color:#00B074">{{ x.job_Title|titlecase }}</span> )</h2>
+              <span  style=" color: #666565;    font-weight: 400;line-height: 1.5;    margin-right: 1rem !important;overflow: hidden;text-align: left !important;text-overflow: ellipsis;white-space: nowrap;"class="text-truncate me-3"
+                ><i class="fa fa-map-marker-alt text-primary me-2"></i
+                >{{ x.location }}</span
+              >
+              <span style=" color: #666565;    font-weight: 400;line-height: 1.5;    margin-right: 1rem !important;overflow: hidden;text-align: left !important;text-overflow: ellipsis;white-space: nowrap;" class="text-truncate me-3" *ngIf="x.job_ype == 1"
+                ><i class="far fa-clock text-primary me-2"></i>Full Time</span
+              >
+              <span style=" color: #666565;    font-weight: 400;line-height: 1.5;    margin-right: 1rem !important;overflow: hidden;text-align: left !important;text-overflow: ellipsis;white-space: nowrap;" class="text-truncate me-3" *ngIf="x.job_ype == 0"
+                ><i class="far fa-clock text-primary me-2"></i>Part Time</span
+              >
+              <span  style=" color: #666565;    font-weight: 400;line-height: 1.5;    margin-right: 0rem !important;overflow: hidden;text-align: left !important;text-overflow: ellipsis;white-space: nowrap;"class="text-truncate me-0"
+                ><i class="far fa-money-bill-alt text-primary me-2"></i>${{
+                  x.salary
+                }}</span
+              >
+            </div>
+          </div>
+          <div
+            class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center" style="    align-items: flex-end !important;justify-content: center !important;    flex-direction: column !important;    display: flex !important;    flex: 0 0 auto;
+            width: 33.33333%;    max-width: 100%;padding-right: calc(var(--bs-gutter-x) / 2); padding-left: calc(var(--bs-gutter-x) / 2);    margin-top: var(--bs-gutter-y);"
+          >
+            <div class="d-flex mb-3"  style="    margin-bottom: 1rem !important;    display: flex !important;    box-sizing: border-box;    --bs-gutter-x: 1.5rem;">
+              <a  style="font-family: 'Inter', sans-serif;
+              font-weight: 600;transition: .5s;background-color: #00B074;border-color: #00B074; display: inline-block;text-align: center;vertical-align: middle; cursor: pointer; user-select: none;border: 1px solid transparent; padding: 0.375rem 0.75rem;font-size: 1rem;border-radius: 2px;line-height: 1.5; color: #fff;" class="btn btn-primary" (click)="f(x.postid)">Apply Now</a>
+            </div>
+
+            <small style="color: #666565;    font-weight: 400;line-height: 1.5;    overflow: hidden;  text-overflow: ellipsis; white-space: nowrap;" class="text-truncate"
+              ><i class="far fa-calendar-alt text-primary me-2"></i>Date :
+              {{ x.post_Date | date: "mediumDate" }}</small
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Jobs End -->

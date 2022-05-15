@@ -1,0 +1,40 @@
+
+<button (click)="x()" > save</button>
+
+<div  id="c" #c ><p  >report works!</p></div>
+
+
+
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+    <table class="table table-bordered table-striped mb-0">
+        <thead>
+            <tr>
+                <th scope="col">cateogery name</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of h.data" >
+                <th>{{x.categoryName}}</th>
+                
+            </tr>
+          
+        </tbody>
+    </table>
+
+</div>
+
+
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Number</mat-label>
+        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+            [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option.categoryName">
+                {{option.categoryName}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>

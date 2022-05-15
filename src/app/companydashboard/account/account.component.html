@@ -1,0 +1,86 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#page-top"> <img class="profile-pic rounded-circle" src="../../assets/companyimg/{{h.compinfo.logo}}" style="height: 50px;" alt="profile"> &nbsp;{{ h.compinfo.compname }}
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Specialties">Specialties</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="#Contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="parallax1" id="page-top">
+    <div class="heading">
+      Company Profile
+    </div>
+  </div>
+  
+  <section class="section1" id="about">
+    <h1>About Us</h1>
+    <br>
+    <div class="col-md-12 row">
+      <div class="col-md-6">
+       
+      </div>
+      <div class="col-md-6">
+      {{ h.compinfo.descreption }}
+      </div>
+    </div>
+  </section>
+  
+  <div class="parallax2" id="Specialties">
+    <div class="heading-sm">
+      <span class="border">
+                  Specialties
+              </span>
+    </div>
+  </div>
+  
+  <section class="dark">
+    <h2>Specialties</h2>
+    <p>{{ h.compinfo.specialties }}</p>
+  </section>
+  
+ 
+  
+  <div class="parallax4"></div>
+  
+  <section class="section1" id="contact">
+    <h1>Contact Us</h1>
+  </section>
+  <div class="parallax5">
+    <section id="contact">
+      <div class="container">
+          <div class="col-md-12 row"  style="text-align: center;">
+            <div class="col-md-6">
+              <h4>Location :</h4>
+              {{h.compinfo.location}}
+              <br>
+              <h4>Phone:</h4>
+              {{h.compinfo.phone}}
+            </div>
+            <div class="col-md-6">
+            <h4>Website_URL:</h4>
+              {{h.compinfo.website_url}}
+              <br>
+              <h4>Email</h4>
+              {{h.compinfo.email}}
+            </div>
+          </div>
+      </div>
+    </section>
+  </div>

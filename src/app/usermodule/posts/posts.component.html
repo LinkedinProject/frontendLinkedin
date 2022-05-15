@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Hi {{homs.oneuser.fname}} </h1>
+<div mat-dialog-content style="width: 500px; height: 200px;">
+   <form [formGroup]="post">
+      <textarea class="form-control" rows="5" formControlName="describ" type="textarea"
+         placeholder="what`s Your Mind"></textarea>
+   </form>
+   <div mat-dialog-actions style="margin-left: 250px ;"  [mat-dialog-close]="true">
+      <button mat-button class="btn btn-outline-info" type="button">cancle</button>&nbsp;
+      &nbsp;&nbsp;&nbsp;<button mat-button class="btn btn-success" type="button" [mat-dialog-close]="true"
+         (click)="puplish()" cdkFocusInitial>publish</button>

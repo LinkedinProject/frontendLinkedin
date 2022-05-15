@@ -1,0 +1,229 @@
+<!-- <link href="http://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet" />
+
+<body class="flex">
+
+  <app-nav-dashboard-admin></app-nav-dashboard-admin>
+
+  <section class="section__main">
+    <div class="flex search mb-8">
+      <button class="bg-white search__button"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M11.7388 2C17.1088 2 21.4768 6.368 21.4768 11.738C21.4768 14.2715 20.5045 16.5823 18.9134 18.3165L22.0442 21.4407C22.3372 21.7337 22.3382 22.2077 22.0452 22.5007C21.8992 22.6487 21.7062 22.7217 21.5142 22.7217C21.3232 22.7217 21.1312 22.6487 20.9842 22.5027L17.8156 19.343C16.1488 20.6778 14.0354 21.477 11.7388 21.477C6.36876 21.477 1.99976 17.108 1.99976 11.738C1.99976 6.368 6.36876 2 11.7388 2ZM11.7388 3.5C7.19576 3.5 3.49976 7.195 3.49976 11.738C3.49976 16.281 7.19576 19.977 11.7388 19.977C16.2808 19.977 19.9768 16.281 19.9768 11.738C19.9768 7.195 16.2808 3.5 11.7388 3.5Z"
+            fill="#919EAB" />
+        </svg>
+      </button>
+      <input type="text" placeholder="Search anything" class="search__input">
+    </div>
+    <div class="bg-primary flex flex-justify-between flex-align-center banner">
+      <div>
+        <h1 class="text-4xl text-white mb-2">Assign at</h1>
+        <h1 class="text-4xl text-white mb-4">Manage website </h1>
+        <div class="banner__cta">
+
+
+          <button class="button bg-secondary text-white py-4 px-8"> create</button>
+        </div>
+      </div>
+      <div class="banner__img">
+        <img src="https://i.ibb.co/vBkwrv5/banner.png" alt="banner">
+      </div>
+    </div>
+
+
+    <div class="charts">
+      <div class="flex flex-justify-between flex-align-center mb-4">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+          integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+        <div class="container mt-3 mb-4">
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="user-dashboard-info-box table-responsive mb-0 bg-white p-4 shadow-sm">
+                  <table class="table manage-candidates-top mb-0">
+                    <thead>
+                      <tr>
+                        <th>Candidate Name</th>
+                        <th class="text-center">Email</th>
+                        <th class="text-center">Phone</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="candidates-list" *ngFor="let x of h.allusers">
+                        <td class="title">
+                          <div class="thumb">
+                            <img class="img-fluid" src="{{x.imageuser}}" alt="">
+                          </div>
+                          <div class="candidate-list-details">
+                            <div class="candidate-list-info">
+                              <div class="candidate-list-title">
+                                <h4 class="mb-0">{{x.fname}} &nbsp; {{x.lname}}</h4>
+                              </div>
+
+                            </div>
+                          </div>
+                        </td>
+                        <td class="candidate-list-favourite-time text-center">
+                          <a class="candidate-list-favourite order-2 text-danger" href="#"><i
+                              class="fas fa-email">{{x.email}}</i></a>
+                          <span class="candidate-list-time order-1"></span>
+                        </td>
+                        <td>
+                          <div class="candidate-list-option">
+                            <ul class="list-unstyled">
+                              <li>{{x.phone}}</li>
+                            </ul>
+                          </div>
+
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <!-- <table>
+<tr>
+    <th>cat id</th>
+
+
+    <th>catname</th>
+            <th>operation</th>
+
+</tr>
+<tr *ngFor="let x of h.data">
+    <td>{{x.categoryId}}</td>
+        <td>{{x.categoryName}}</td>
+
+    <button (click)="opendialog(x.categoryId,x.categoryName)"> update</button>
+    <button> delete</button>
+
+</tr>
+
+</table>
+-->
+<!--
+     <ng-template #callupdate>
+        <form [formGroup]="update">
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <input type="text" matInput formControlName="categoryName" placeholder="Ex. pat@example.com"
+                    [(ngModel)]="obj.categoryName">
+
+            </mat-form-field>
+            <button (click)="updatecat()">submit</button>
+        </form>
+    </ng-template>
+-->
+
+
+<link href="http://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet" />
+
+<body class="flex">
+<app-nanav-dashboard-admin></app-nanav-dashboard-admin>>
+  <section class="section__main">
+<div class="bg-primary flex flex-justify-between flex-align-center banner">
+  <div>
+    <h1 class="text-4xl text-white mb-2">All User </h1>
+    <h1 class="text-4xl text-white mb-4">Register </h1>
+    
+  </div>
+
+  <div class="banner__img">
+    <img src="https://i.ibb.co/vBkwrv5/banner.png" alt="banner">
+  </div>
+</div>
+
+    <div class="charts">
+      <div class="flex flex-justify-between flex-align-center mb-4">
+
+        <div class="container bootdey">
+          <!--  -->
+          <!-- <h1 class="text-secondary my-5 text-center"> All Users Registered</h1>
+ -->
+          
+          <div class="row h-75 mt-5 p-2">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+              integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+            <div class="container mt-3 mb-4">
+
+              <div class="user-dashboard-info-box table-responsive mb-0 bg-white p-4 shadow ">
+              <table class="table table-hover table-striped table-bordered" cellspacing="0" datatable [dtOptions]="h.dtOptions"
+                [dtTrigger]="h.dtTrigger">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>User Name/Link Profile</th>
+                      <th>Contact Info</th>
+                      <th>Address</th>
+                      <th>Education Level</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let x of h.allusers">
+                      <td class="title">
+                        <div>
+                          <img class="img-thumbnail rounded-circle"  style="width:70px;height:70px " src="../../../assets/userimg/{{x.imageuser}}"
+                            alt="">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="candidate-list-details">
+                          <div class="candidate-list-info">
+                            <div class="candidate-list-title">
+                              <h3 class="mb-0"> {{ x.fname + ' ' |titlecase}} {{ x.lname |titlecase}}</h3>
+                            </div>
+
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="candidate-list-details">
+                          <div class="candidate-list-info">
+                            <div class="candidate-list-title">
+                              <h3 class="mb-0"><i class="fas fa-at pr-1"></i> {{ x.email }} </h3>
+                            </div>
+                            <div class=" candidate-list-option">
+                              <ul class="list-unstyled">
+                                <li><i class="fas fa-phone pr-1"></i>{{ x.phone }}
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="candidate-list-favourite-time  ">
+                        <i class="fas fa-map-marker-alt pr-1"></i>
+                        <span class="candidate-list-time order-1">{{ x.address }}</span>
+                      </td>
+                      <td class="candidate-list-favourite-time  lh-base">
+                        <span class="candidate-list-time order-1  overflow-auto h-75">{{ x.edu_level }}
+
+                        </span>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</body>

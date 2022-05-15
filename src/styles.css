@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif ;background-color: white;font-size: 43.4px; }
+
+.owl-carousel-item{
+    width: 700px;
+    height: 10px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}

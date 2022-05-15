@@ -1,0 +1,334 @@
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
+  style="top: -100px;    transition: .5s;box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 18%) !important;
+position: sticky; height: 80px;   display: flex;flex-wrap: wrap;align-items: center;justify-content: space-between;z-index: 1020;">
+  <a style="color: rgba(0,0,0,0.9);text-align: center !important;    padding-top: 0 !important;
+    padding-bottom: 0 !important;padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;align-items: center !important;    display: flex !important;    margin-right: 1rem;
+    font-size: 1.25rem;
+    white-space: nowrap; height: 75px;" href="index.html"
+    class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+    <h1 class="m-0 text-primary" style="font-size: calc(1.375rem + 1.5vw);font-family: Inter,sans-serif;
+                font-weight: 700;
+                line-height: 1.2;">JobEntry</h1>
+  </a>
+  <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="navbar-nav ms-auto p-4 p-lg-0">
+
+      <a href="home" style="font-size: 18px;text-transform: uppercase;outline: none;" class="nav-item nav-link">Home</a>
+
+      <a href="userprofile" style="font-size: 18px;text-transform: uppercase;outline: none;"
+        class="nav-item nav-link active">Home Profile</a>
+      <a href="applied" style="font-size: 18px;text-transform: uppercase;outline: none;" class="nav-item nav-link">My
+        Applied </a>
+
+      <a (click)="clears()" class="nav-item nav-link"
+        style="font-size: 18px;text-transform: uppercase;outline: none;">logout</a>
+
+
+
+
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- <button (click)="edu()">edu</button>> -->
+<!-- 
+<body
+  >
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="grid search">
+          <div class="grid-body">
+            <div class="row">
+              <div class="col-md-3">
+                <h2 class="grid-title"><i class="fa fa-filter"></i> Filters</h2>
+                <hr>
+
+                <h4>By category:</h4>
+
+                  <button type="button" class="btn btn-link" (click)="today()"
+                    style="font-size: 13px; color:rgb(94, 91, 91);">Today
+                    Applied</button>
+
+
+                  <button type="button" class="btn btn-link" (click)="last()"
+                    style="font-size: 13px; color:rgb(94, 91, 91);">Yesterday
+                    Applied</button>
+
+                  <button type="button" class="btn btn-link" (click)="week()"
+                    style="font-size: 13px; color:rgb(94, 91, 91);">Last seven
+                    days</button>
+
+
+                <h4>By date:</h4>
+                <form [formGroup]="date">
+                 <h1> From </h1>
+                  <div class="input-group date form_date" data-link-field="dtp_input1">
+                    <input type="date" formControlName="date1" class="form-control">
+                    <span class="input-group-addon bg-blue"></span>
+                  </div>
+
+                <h1> To </h1>
+                  <div class="input-group date form_date" data-link-field="dtp_input2">
+                    <input type="date" formControlName="date2" class="form-control">
+                  </div>
+               
+                  <div class="text-center">
+                    <button (click)="betweendate()" class=" btn btn-primary">search</button>
+                  </div>
+
+                </form>
+              </div>
+           
+              <div class="col-md-9">
+                <h2><i class="fa fa-file-o"></i> Result</h2>
+                <hr>
+
+               
+
+                <div class="padding"></div>
+
+                <div class="row">
+           
+                  <div class="col-sm-6">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        Order <span class="caret"></span>
+                      </button>
+
+                    </div>
+                  </div>
+            
+
+
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+
+
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let x of homs.day">
+                        <td class="image"><img src="../../../assets/companyimg/{{x.logo}}" alt=""></td>
+                        <td class="product" style="font-size: 13px;"><strong
+                            style="font-size: 17px;">{{x.job_title}}</strong>{{x.applay_date}}</td>
+                     
+                        <td class="price text-right"> <a class="btn btn-outline-danger">{{x.stutus}} </a> </td>
+                        <td class="price text-right"></td>
+
+
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</body>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+  <div class="row">
+    <!-- BEGIN SEARCH RESULT -->
+    <div class="col-md-12">
+      <div class="grid search">
+        <div class="grid-body">
+          <div class="row">
+            <!-- BEGIN FILTERS -->
+            <div class="col-md-3">
+              <h2 class="grid-title"><i class="fa fa-filter"></i> Filters</h2>
+              <hr>
+
+              <!-- BEGIN FILTER BY CATEGORY -->
+              <h4>By category:</h4>
+          <div class="form-check">
+            <input  (click)="today()" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Today Applay
+            </label>
+          </div>
+          <div class="form-check">
+            <input  (click)="last()"  class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+            <label class="form-check-label" for="flexRadioDefault2">
+              Yesterday Applay
+            </label>
+          </div>
+          <div class="form-check">
+            <input  (click)="week()"  class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault3">
+              Last Week Applay
+            </label>
+          </div>
+              <!-- END FILTER BY CATEGORY -->
+
+              <div class="padding"></div>
+
+              <!-- BEGIN FILTER BY DATE -->
+              <h4>By date:</h4>
+              From
+              <form  [formGroup]="date">
+              <div class="input-group date form_date"  data-date-format="dd-mm-yyyy"
+                data-link-field="dtp_input1">
+                <input type="date" class="form-control"  formControlName="date1">
+              </div>
+              <input type="hidden" id="dtp_input1" value="">
+
+              To
+              <div class="input-group date form_date"  data-date-format="dd-mm-yyyy"
+                data-link-field="dtp_input2">
+                <input type="date"  formControlName="date2" class="form-control">
+              </div>
+              <input type="hidden" id="dtp_input2" value="">
+              <br>
+              <button class="btn btn-success" (click)="betweendate()">search</button>
+</form>
+              <div class="padding"></div>
+
+              <!-- BEGIN FILTER BY PRICE -->
+       
+              <!-- END FILTER BY PRICE -->
+            </div>
+            <!-- END FILTERS -->
+            <!-- BEGIN RESULT -->
+            <div class="col-md-9">
+              <h2><i class="fa fa-file-o"></i> Your All Applied job</h2>
+              <hr>
+              <!-- BEGIN SEARCH INPUT -->
+              <!-- <div class="input-group">
+                <input type="text" class="form-control" value="web development">
+                <span class="input-group-btn">
+                  <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+                </span>
+              </div>
+               <p>Showing all results matching "web development"</p> -->
+
+              <div class="padding"></div>
+
+              <div class="row">
+                <!-- BEGIN ORDER RESULT -->
+                <div class="col-sm-6">
+                  <div class="btn-group">
+                 
+                  </div>
+                </div>
+                <!-- END ORDER RESULT -->
+
+                <div class="col-md-6 text-right">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default active"><i class="fa fa-list"></i></button>
+                    <button type="button" class="btn btn-default"><i class="fa fa-th"></i></button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- BEGIN TABLE RESULT -->
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+              <table class="table table-hover table-striped table-bordered ttt " >
+                  <tbody>
+                    <tr *ngFor="let x of homs.day">
+                      <td class="image"><img src="../../../assets/companyimg/{{x.logo}}" alt=""></td>
+                      <td class="product"><strong> {{x.company|uppercase}} ( {{x.job_title| titlecase}} )</strong><br>{{x.applay_date|date :'short'}}</td>
+                    
+                      <td class="price text-right">{{x.stutus}}</td>
+                    </tr>
+           
+                  </tbody>
+                </table>
+              </div>
+              <!-- END TABLE RESULT -->
+
+              <!-- BEGIN PAGINATION -->
+            
+              <!-- END PAGINATION -->
+            </div>
+            <!-- END RESULT -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END SEARCH RESULT -->
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<app-f></app-f>
